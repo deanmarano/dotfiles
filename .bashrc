@@ -14,6 +14,10 @@ if [ -f  /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 fi
 GIT_PS1_SHOWDIRTYSTATE=true
 
+if [ -f  /usr/local/etc/bash_completion.d/tmux ]; then
+  . /usr/local/etc/bash_completion.d/tmux
+fi
+
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 alias sshatom="ssh dean@atom.deanoftech.com"
 alias ssh374="ssh dmarano1@ctilinux1.cstcis.cti.depaul.edu"
