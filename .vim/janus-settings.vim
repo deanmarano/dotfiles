@@ -51,10 +51,10 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
 " Ignore bundler and sass cache
-set wildignore+=*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/vendor/*,*/.bundle/*,*/.sass-cache/*
 
 " Disable temp and backup files
-set wildignore+=*.swp,*~,._*
+set wildignore+=*/tmp/*,*.swp,*~,._*
 
 ""
 "" Backup and swap files

@@ -1,2 +1,4 @@
 .vim/_temp/*
 .vim/.netrwhist
+.DS_Store
+.*~
