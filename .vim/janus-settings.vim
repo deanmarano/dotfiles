@@ -53,6 +53,8 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 " Ignore bundler and sass cache
 set wildignore+=*/vendor/*,*/.bundle/*,*/.sass-cache/*
 
+" Ignore node_modules
+set wildignore+=*/node_modules/*
 " Disable temp and backup files
 set wildignore+=*/tmp/*,*.swp,*~,._*
 

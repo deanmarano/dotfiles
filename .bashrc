@@ -69,3 +69,5 @@ alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade"
 alias sshatom="ssh dean@atom.deanoftech.com"
 alias sshfsatom="mkdir -p /Volumes/atom && sshfs dean@atom.deanoftech.com:/ /Volumes/atom/ -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=atom"
 alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && open vnc://atom.deanoftech.com:6000"
+
+alias vim="echo 'Stop doing that. Use vi.'"
