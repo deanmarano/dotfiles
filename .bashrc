@@ -71,3 +71,5 @@ alias sshfsatom="mkdir -p /Volumes/atom && sshfs dean@atom.deanoftech.com:/ /Vol
 alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && open vnc://atom.deanoftech.com:6000"
 
 alias vim="echo 'Stop doing that. Use vi.'"
+alias vi="/usr/local/bin/vim"
+
