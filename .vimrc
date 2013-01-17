@@ -1,8 +1,6 @@
 " Pathogen
 call pathogen#infect()
 
-filetype plugin indent on
-
 " Some defaults (tabs, other things, etc) that janus gives us
 source ~/.vim/janus-settings.vim
 
@@ -10,9 +8,6 @@ source ~/.vim/janus-settings.vim
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
 set clipboard=unnamed
 
-" <Ctrl-l> redraws the screen and removes any search highlighting.
-" http://stackoverflow.com/questions/99161/
-nnoremap <silent> <C-l> :nohl<CR><C-l>
 " Geoff's hashrocket
 imap <silent> <C-l> <Space>=><Space>
 
@@ -86,9 +81,6 @@ inoremap <C-k> <Esc>:m-2<CR>==gi
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
- " use Y to yank the rest of the line - from Geoff
-map Y y$
-
 " use the mouse!!
 " http://ayaz.wordpress.com/2010/10/19/using-mouse-inside-vim-on-terminal-app/
 set mouse=a
@@ -104,8 +96,6 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
-" always show status line http://vim.wikia.com/wiki/Displaying_status_line_always
-:set laststatus=2
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
 :set showtabline=2
 
