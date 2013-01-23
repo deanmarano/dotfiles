@@ -96,11 +96,23 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
+nnoremap <Leader>wt :set formatoptions=ta<cr>
+nnoremap <Leader>uwt :set formatoptions=<cr>
+
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
 :set showtabline=2
 
 " ability to save with sudo http://vim.wikia.com/wiki/Su-write
 cmap w!! %!sudo tee > /dev/null %
+
+function! PromoteToLet()
+  :normal! dd
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>p :PromoteToLet<cr>
 
 if !empty(expand('$THEME'))
   execute "set background=".expand('$THEME')

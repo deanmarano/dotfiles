@@ -58,6 +58,7 @@ alias prod-pending="cap production deploy:pending"
 alias sshprodweb="ssh dealestate_deploy@dealestate-app1.snc1"
 alias sshstagingweb="ssh dealestate_deploy@dealestate-app1-uat.snc1"
 alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
+alias cde="cd ~/groupon/dealestate"
 
 # cli tools
 alias t="tmux attach -t dealestate || tmux new -s dealestate"
@@ -72,4 +73,5 @@ alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && op
 
 alias vim="echo 'Stop doing that. Use vi.'"
 alias vi="/usr/local/bin/vim"
+alias psgrep=" ps ax | grep"
 
