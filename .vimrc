@@ -89,6 +89,10 @@ set mouse=a
 if has('gui_running')
   syntax enable
   set guifont=Monaco:h15
+
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+
   colorscheme solarized
   set guioptions=egmrt
 endif
@@ -96,7 +100,7 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
-nnoremap <Leader>wt :set formatoptions=ta<cr>
+nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
 
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
