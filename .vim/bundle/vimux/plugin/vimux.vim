@@ -14,6 +14,8 @@ command VimuxCloseRunner :call VimuxCloseRunner()
 command VimuxClosePanes :call VimuxClosePanes()
 command VimuxCloseWindows :call VimuxCloseWindows()
 command VimuxInspectRunner :call VimuxInspectRunner()
+command VimuxScrollUpInspect :call VimuxScrollUpInspect()
+command VimuxScrollDownInspect :call VimuxScrollDownInspect()
 command VimuxInterruptRunner :call VimuxInterruptRunner()
 command VimuxPromptCommand :call VimuxPromptCommand()
 command VimuxClearRunnerHistory :call VimuxClearRunnerHistory()
@@ -36,12 +38,13 @@ function VimuxRunCommand(command, ...)
     let l:autoreturn = a:1
   endif
 
-  let g:_VimTmuxCmd = a:command
+  let s:_VimTmuxCmd = substitute(a:command, '`', '\\`', 'g')
+  let s:_VimTmuxCmdAutoreturn = l:autoreturn
 
   if l:autoreturn == 1
-    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("g:_VimTmuxCmd"))
+    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"))
   else
-    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("g:_VimTmuxCmd"), false)
+    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"), false)
   endif
 endfunction
 
@@ -54,19 +57,24 @@ function RunVimTmuxCommand(command, ...)
     let l:autoreturn = a:1
   endif
 
-  let g:_VimTmuxCmd = a:command
+  let s:_VimTmuxCmd = substitute(a:command, '`', '\\`', 'g')
+  let s:_VimTmuxCmdAutoreturn = l:autoreturn
 
   if l:autoreturn == 1
-    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("g:_VimTmuxCmd"))
+    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"))
   else
-    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("g:_VimTmuxCmd"), false)
+    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"), false)
   endif
 endfunction
 
 
 function VimuxRunLastCommand()
-  if exists("g:_VimTmuxCmd")
-    ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("g:_VimTmuxCmd"))
+  if exists("s:_VimTmuxCmd")
+    if s:_VimTmuxCmdAutoreturn == 1
+      ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"))
+    else
+      ruby CurrentTmuxSession.new.run_shell_command(Vim.evaluate("s:_VimTmuxCmd"), false)
+    endif
   else
     echo "No last command"
   endif
@@ -79,8 +87,8 @@ endfunction
 
 
 function VimuxClearWindow()
-  if exists("g:_VimTmuxRunnerPane")
-    unlet g:_VimTmuxRunnerPane
+  if exists("s:_VimTmuxRunnerPane")
+    unlet s:_VimTmuxRunnerPane
   end
 endfunction
 
@@ -127,6 +135,13 @@ function InterruptVimTmuxRunner()
   call VimuxInterruptRunner()
 endfunction
 
+function VimuxScrollDownInspect()
+  ruby CurrentTmuxSession.new.inspect_scroll_down
+endfunction
+
+function VimuxScrollUpInspect()
+  ruby CurrentTmuxSession.new.inspect_scroll_up
+endfunction
 
 function VimuxInspectRunner()
   ruby CurrentTmuxSession.new.inspect_runner
@@ -140,6 +155,9 @@ endfunction
 
 function VimuxPromptCommand()
   let l:command = input("Command? ")
+  if exists("g:VimuxPromptString")
+    let l:command = input(g:VimuxPromptString)
+  endif
   call VimuxRunCommand(l:command)
 endfunction
 
@@ -163,19 +181,19 @@ class TmuxSession
   end
 
   def vim_cached_runner_pane
-    if Vim.evaluate('exists("g:_VimTmuxRunnerPane")') != 0
-      Vim.evaluate('g:_VimTmuxRunnerPane')
+    if Vim.evaluate('exists("s:_VimTmuxRunnerPane")') != 0
+      Vim.evaluate('s:_VimTmuxRunnerPane')
     else
       nil
     end
   end
 
   def vim_cached_runner_pane=(runner_pane)
-    Vim.command("let g:_VimTmuxRunnerPane = '#{runner_pane}'")
+    Vim.command("let s:_VimTmuxRunnerPane = '#{runner_pane}'")
   end
 
   def clear_vim_cached_runner_pane
-    Vim.command("unlet g:_VimTmuxRunnerPane")
+    Vim.command("unlet s:_VimTmuxRunnerPane")
   end
 
   def clear_runner_history
@@ -211,6 +229,22 @@ class TmuxSession
     _run("copy-mode")
   end
 
+  def inspect_send_command(cmd)
+    t = target(:pane => runner_pane)
+    _run("select-pane -t #{t}")
+    _run("copy-mode")
+    _send_command(cmd, t, false)
+    _move_up_pane
+  end
+
+  def inspect_scroll_up
+    inspect_send_command("C-u")
+  end
+
+  def inspect_scroll_down
+    inspect_send_command("C-d")
+  end
+
   def current_panes
     _run('list-panes').split("\n").map do |line|
       line.split(':').first
@@ -224,7 +258,7 @@ class TmuxSession
   end
 
   def target(args={})
-    "#{args.fetch(:session, @session)}:#{args.fetch(:window, @window)}.#{args.fetch(:pane, @pane)}"
+    "'#{args.fetch(:session, @session)}':'#{args.fetch(:window, @window)}'.#{args.fetch(:pane, @pane)}"
   end
 
   def runner_pane
@@ -237,7 +271,7 @@ class TmuxSession
       end
       @runner_pane = active_pane_id
       _send_command("cd #{`pwd`}", target(:pane => runner_pane))
-      Vim.command("let g:_VimTmuxRunnerPane = '#{@runner_pane}'")
+      Vim.command("let s:_VimTmuxRunnerPane = '#{@runner_pane}'")
     end
 
     _run('list-panes').split("\n").map do |line|
@@ -259,7 +293,7 @@ class TmuxSession
   end
 
   def close_runner_pane
-    _run("kill-pane -t #{target(:pane => runner_pane)}")
+    _run("kill-pane -t #{target(:pane => runner_pane)}") unless @runner_pane.nil?
   end
 
   def close_other_panes
@@ -283,8 +317,12 @@ class TmuxSession
   end
 
   def _send_command(command, target, auto_return = true)
-    _run("send-keys -t #{target} \"#{command.gsub('"', '\"')}\"")
+    _run("send-keys -t #{target} \"#{_escape_command(command)}\"")
     _run("send-keys -t #{target} Enter") if auto_return
+  end
+
+  def _escape_command(command)
+    command.gsub('"', '\"').gsub('$', '\$')
   end
 
   def _run(command)

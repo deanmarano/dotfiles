@@ -95,7 +95,7 @@ vimux from automatically sending a return after the command.
 >
  " Run the current file with rspec
  map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
- " Run command without sending sending a return
+ " Run command without sending a return
  map <Leader>rq :call VimuxRunCommand("clear; rspec " . bufname("%"), 0)<CR>
 <
 
@@ -287,10 +287,21 @@ Default: 0
 The keys sent to the runner pane before running a command. By default it sends
 `q` to make sure the pane is not in scroll-mode and `C-u` to clear the line.
 
-  let VimuxUseNearestPane = ""
+  let VimuxResetSequence = ""
 
 Default: "q C-u"
 
+------------------------------------------------------------------------------
+                                                             *VimuxPromptString*
+2.5 g:VimuxPromptString~
+
+The string presented in the vim command line when Vimux is invoked. Be sure
+to put a space at the end of the string to allow for distinction between
+the prompt and your input.
+
+  let g:VimuxPromptString = ""
+
+Default: "Command? "
 
 ==============================================================================
 vim:tw=78:ts=2:sw=2:expandtab:ft=help:norl:
