@@ -35,31 +35,37 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 "vimux
 " Run the current spec with rspec
- map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
-" Run the current feature with cucumber
- map <Leader>rf :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
+map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
 " Run the current line with rspec
- map <Leader>rt :call VimuxRunCommand("clear; rspec " . bufname("%") . ':' .  line('.'))<CR>
+map <Leader>rt :call VimuxRunCommand("clear; rspec " . bufname("%") . ':' .  line('.'))<CR>
 
- " Prompt for a command to run
- map <Leader>rp :VimuxPromptCommand<CR>
+" Run the current feature with cucumber
+map <Leader>rc :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
 
- " Run last command executed by VimuxRunCommand
- map <Leader>rl :VimuxRunLastCommand<CR>
+" Run the current feature with cucumber
+map <Leader>rf :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
 
- " Inspect runner pane
- map <Leader>ri :VimuxInspectRunner<CR>
+" Run the current script with r
+map <Leader>rr :call VimuxRunCommand("clear; r -q -f " . bufname("%"))<CR>
 
- " Close all other tmux panes in current window
- map <Leader>rx :VimuxClosePanes<CR>
+" Prompt for a command to run
+map <Leader>rp :VimuxPromptCommand<CR>
 
- " Close vim tmux runner opened by VimuxRunCommand
- map <Leader>rq :VimuxCloseRunner<CR>
+" Run last command executed by VimuxRunCommand
+map <Leader>rl :VimuxRunLastCommand<CR>
 
- " Interrupt any command running in the runner pane
- map <Leader>rs :VimuxInterruptRunner<CR>nnoremap <leader>t :call RunVimTmuxCommand()<cr>
+" Inspect runner pane
+map <Leader>ri :VimuxInspectRunner<CR>
+
+" Close all other tmux panes in current window
+map <Leader>rx :VimuxClosePanes<CR>
+
+" Close vim tmux runner opened by VimuxRunCommand
+map <Leader>rq :VimuxCloseRunner<CR>
+
+" Interrupt any command running in the runner pane
+map <Leader>rs :VimuxInterruptRunner<CR>nnoremap <leader>t :call RunVimTmuxCommand()<cr>
 
 "map nerdcommenter to \/
 nm <Leader>/ <plug>NERDCommenterInvert
@@ -100,6 +106,8 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
+nnoremap <Leader>gg :GitGrep 
+
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
 
@@ -108,6 +116,9 @@ nnoremap <Leader>uwt :set formatoptions=<cr>
 
 " ability to save with sudo http://vim.wikia.com/wiki/Su-write
 cmap w!! %!sudo tee > /dev/null %
+
+" Clear trailing whitespace
+nnoremap <Leader>ws :%s/\s\+$//<cr>
 
 function! PromoteToLet()
   :normal! dd
@@ -118,10 +129,6 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
 
-if !empty(expand('$THEME'))
-  execute "set background=".expand('$THEME')
-else
-  set background=dark
-endif
+set background=light
 
 colorscheme solarized
