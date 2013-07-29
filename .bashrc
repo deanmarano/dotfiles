@@ -1,3 +1,5 @@
+export PATH="$HOME/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:$HOME/.rvm/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/share/python:/usr/local/bin:$PATH"
+
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 export RUBY_HEAP_MIN_SLOTS=500000
@@ -8,14 +10,13 @@ export RUBY_GC_MALLOC_LIMIT=50000000
 # Node
 export NODE_PATH="/usr/local/lib/node"
 export EDITOR="/usr/local/bin/vim"
-export PATH="$HOME/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/local/bin:/usr/local/sbin:./bin:/usr/local/share/npm/bin:/usr/local/share/python:$PATH"
 
 if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home ]; then
   export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 fi
 
 export HISTCONTROL=erasedups
-export HISTSIZE=10000
+export HISTSIZE=1000000
 
 shopt -s histappend
 bind '"\e[A":history-search-backward'
@@ -25,6 +26,11 @@ bind '"\e[B":history-search-forward'
 if [ -f  /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
+
+if [ -f  /usr/local/etc/bash_completion.d/R ]; then
+  . /usr/local/etc/bash_completion.d/R
+fi
+
 
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
     . /usr/local/etc/bash_completion.d/git-prompt.sh
@@ -50,6 +56,7 @@ alias be="bundle exec"
 alias bec="bundle exec cucumber --format pretty -color $1"
 alias bprm="build push rebase master $1"
 alias groupon-uat-deploy="bundle exec cap uat web deploy"
+alias remote_bundle="http_proxy=http://localhost:3132 bundle"
 
 # deal estate
 alias prod-pending="HOSTFILTER=dealestate-irb1.snc1 cap production deploy:pending"
@@ -61,6 +68,9 @@ alias cde="cd ~/groupon/dealestate"
 # cli tools
 alias t="tmux attach -t dealestate || tmux new -s dealestate"
 alias g="git"
+alias gprom="git pull --rebase origin master"
+alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+alias cdp="cd ~/projects"
 alias gtd="git diff origin > ~/the.diff"
 
 # atom
