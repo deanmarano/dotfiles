@@ -31,10 +31,6 @@ mostly `:set` calls.)  Here's a taste:
 * `'incsearch'`: Start searching before pressing enter.
 * `'listchars'`: Makes `:set list` (visible whitespace) prettier.
 * `'scrolloff'`: Always show at least one line above/below the cursor.
-* `'directory'`: Dump swap files under `~/.cache/vim/swap` (only if that
-  directory already exists).  Also `'backupdir'` and `'undodir'`.  Try
-  `mkdir -p ~/.cache/vim/{swap,backup,undo}`.
-* `nmap Y y$`: Make `Y` behave like `C` and `D`.
 * `runtime! macros/matchit.vim`: Load the version of matchit.vim that ships
   with Vim.
 
@@ -73,10 +69,10 @@ persuasion for me to remove them.  Everything else is negotiable.
 Feel free to ask a question if you're not sure why I've set something, as I
 haven't put much effort into documenting that.
 
-I'm a stickler for [commit messages][], so if you send me a pull
-request with so much as superfluous period in the subject line, I will
-close it without so much as a second thought, and save my precious attention
-for someone who can actually follow directions.
+I'm a stickler for [commit messages][], so if you send me a pull request with
+so much as a superfluous period in the subject line, I will close it without
+so much as a second thought, and save my precious attention for someone who
+can actually follow directions.
 
 [GitHub issues]: http://github.com/tpope/vim-sensible/issues
 [commit messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
