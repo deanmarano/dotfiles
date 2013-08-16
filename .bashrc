@@ -1,4 +1,5 @@
-export PATH="$HOME/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:$HOME/.rvm/bin:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/share/python:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/share/python:/usr/local/bin:$PATH"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
@@ -64,6 +65,7 @@ alias sshprodweb="ssh dealestate_deploy@dealestate-app1.snc1"
 alias sshstagingweb="ssh dealestate_deploy@dealestate-app1-uat.snc1"
 alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
 alias cde="cd ~/groupon/dealestate"
+alias cdg="cd ~/groupon/groupon"
 
 # cli tools
 alias t="tmux attach -t dealestate || tmux new -s dealestate"
@@ -82,4 +84,3 @@ alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && op
 alias vim="echo 'Stop doing that. Use vi.'"
 alias vi="/usr/local/bin/vim"
 alias psgrep=" ps ax | grep"
-
