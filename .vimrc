@@ -106,7 +106,7 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
-nnoremap <Leader>gg :GitGrep 
+nnoremap <Leader>gg :GitGrep<Space>
 
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
@@ -116,6 +116,24 @@ nnoremap <Leader>uwt :set formatoptions=<cr>
 
 " ability to save with sudo http://vim.wikia.com/wiki/Su-write
 cmap w!! %!sudo tee > /dev/null %
+
+" Make Y behave like other capitals http://vimbits.com/bits/11
+map Y y$
+
+" Automatically reload vimrc when it's saved https://gist.github.com/nocash/1988620
+augroup AutoReloadVimRC
+  au!
+  au BufWritePost $MYVIMRC so $MYVIMRC
+augroup END
+
+" Better comand-line editing http://vimbits.com/bits/30
+cnoremap <C-j> <t_kd>
+cnoremap <C-k> <t_ku>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+
+" Resize splits when the window is resized http://vimbits.com/bits/223
+au VimResized * exe "normal! \<c-w>="
 
 " Clear trailing whitespace
 nnoremap <Leader>ws :%s/\s\+$//<cr>
@@ -132,3 +150,10 @@ endfunction
 set background=light
 
 colorscheme solarized
+"
+" Backup and swap files
+"
+
+set backupdir=~/.cache/vim/backup/    " where to put backup files.
+set directory=~/.cache/vim/swap/      " where to put swap files.
+set undodir=~/.cache/vim/undo/      " where to put swap files.
