@@ -106,7 +106,7 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
-nnoremap <Leader>gg :GitGrep<Space>
+nnoremap <Leader>gg :Ack<Space>
 
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
