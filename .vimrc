@@ -73,8 +73,8 @@ vm <Leader>/ <plug>NERDCommenterInvert
 
 nnoremap <Leader>n :NERDTreeToggle<cr>
 let NERDTreeMinimalUI=1
-autocmd VimEnter * :NERDTreeToggle
-autocmd VimEnter * wincmd p
+"autocmd VimEnter * :NERDTreeToggle
+"autocmd VimEnter * wincmd p
 "autoclose NERDTree if it's the last thing left
 "https://github.com/scrooloose/nerdtree/issues/21
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -106,7 +106,7 @@ endif
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<'<cr>
 
-nnoremap <Leader>gg :Ack<Space>
+nnoremap <Leader>gg :GitGrep<Space>
 
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
@@ -157,3 +157,6 @@ colorscheme solarized
 set backupdir=~/.cache/vim/backup/    " where to put backup files.
 set directory=~/.cache/vim/swap/      " where to put swap files.
 set undodir=~/.cache/vim/undo/      " where to put swap files.
+
+" Format JSON
+nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg

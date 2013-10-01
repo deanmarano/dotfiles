@@ -1,17 +1,22 @@
 [color]
   ui = auto
 [user]
-	email = dmarano@groupon.com
-	name = Dean Marano
+  email = dmarano@groupon.com
+  name = Dean Marano
 [core]
-	editor = /usr/local/bin/vim
-	autocrlf = input
+  editor = /usr/local/bin/vim
+  autocrlf = input
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [alias]
-	d = difftool
+  d = difftool
+  b = branch
+  ba = branch -a
+  ci = commit
+  cim = commit -m
+  co = checkout
 [branch]
   autosetuprebase = always
 [push]

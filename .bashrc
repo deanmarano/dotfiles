@@ -9,7 +9,7 @@ export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
 # Node
-export NODE_PATH="/usr/local/lib/node"
+export NODE_PATH="/usr/local/lib/node/bin"
 export EDITOR="/usr/local/bin/vim"
 
 if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home ]; then
@@ -65,14 +65,19 @@ alias sshprodweb="ssh dealestate_deploy@dealestate-app1.snc1"
 alias sshstagingweb="ssh dealestate_deploy@dealestate-app1-uat.snc1"
 alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
 alias cde="cd ~/groupon/dealestate"
+alias cda="cd ~/groupon/accounting-service"
+alias cdb="cd ~/groupon/bling"
 alias cdg="cd ~/groupon/groupon"
 
 # cli tools
-alias t="tmux attach -t dealestate || tmux new -s dealestate"
+alias t="tmux attach -t grpn || tmux new -s grpn"
 alias g="git"
 alias gprom="git pull --rebase origin master"
+alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin"
 alias cdp="cd ~/projects"
+alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
 
 # atom
@@ -83,4 +88,5 @@ alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && op
 
 alias vim="echo 'Stop doing that. Use vi.'"
 alias vi="/usr/local/bin/vim"
+alias clj="lein repl"
 alias psgrep=" ps ax | grep"
