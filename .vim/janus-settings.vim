@@ -37,7 +37,7 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
 " Ignore bundler and sass cache
-set wildignore+=*/vendor/*,*/.bundle/*,*/.sass-cache/*
+set wildignore+=*/.bundle/*,*/.sass-cache/*
 
 " Ignore node_modules
 set wildignore+=*/node_modules/*

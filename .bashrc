@@ -77,6 +77,7 @@ alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin"
 alias cdp="cd ~/projects"
+alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
 
