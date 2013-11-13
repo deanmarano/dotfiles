@@ -22,6 +22,9 @@ let g:ctrlp_clear_cache_on_exit = 0
 " set max files for CtrlP to scan https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
 let g:ctrlp_max_files = 20000
 
+" set max height of CtrlP results
+let g:ctrlp_match_window = 'max:20'
+
 " expand %% to current directory - from Kevin B., from DAS
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -160,3 +163,12 @@ set undodir=~/.cache/vim/undo/      " where to put swap files.
 
 " Format JSON
 nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg
+
+" Excryption scheme
+" http://usevim.com/2013/11/01/vim-encryption/
+set cryptmethod=blowfish
+
+" History size
+" http://usevim.com/2013/11/08/set-history/
+"
+set history=100000
