@@ -49,7 +49,7 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-
+source ~/bin/gpush.sh
 
 
 # groupon
@@ -64,10 +64,12 @@ alias prod-pending="HOSTFILTER=dealestate-irb1.snc1 cap production deploy:pendin
 alias sshprodweb="ssh dealestate_deploy@dealestate-app1.snc1"
 alias sshstagingweb="ssh dealestate_deploy@dealestate-app1-uat.snc1"
 alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
-alias cde="cd ~/groupon/dealestate"
 alias cda="cd ~/groupon/accounting-service"
 alias cdb="cd ~/groupon/bling"
+alias cde="cd ~/groupon/dealestate"
 alias cdg="cd ~/groupon/groupon"
+alias cdh="cd ~/groupon/hermes"
+alias cds="cd ~/groupon/spinderella"
 
 # cli tools
 alias t="tmux attach -t grpn || tmux new -s grpn"
@@ -77,6 +79,7 @@ alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin"
 alias cdp="cd ~/projects"
+alias cdbc="cd ~/projects/baseclinic"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
