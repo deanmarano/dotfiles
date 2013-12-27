@@ -160,6 +160,10 @@ colorscheme solarized
 set backupdir=~/.cache/vim/backup/    " where to put backup files.
 set directory=~/.cache/vim/swap/      " where to put swap files.
 set undodir=~/.cache/vim/undo/      " where to put swap files.
+set undofile
+
+" Word count
+nnoremap <Leader>wc g<C-g>
 
 " Format JSON
 nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg

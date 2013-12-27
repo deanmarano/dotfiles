@@ -83,6 +83,7 @@ alias cdbc="cd ~/projects/baseclinic"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
+alias lien="lein"
 
 # atom
 alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
