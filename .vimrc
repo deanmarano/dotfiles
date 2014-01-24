@@ -13,6 +13,7 @@ imap <silent> <C-l> <Space>=><Space>
 
 "Allow Control P to fire the CtrlP plugin (doesn't by default?)
 :nmap <C-p> :CtrlP<CR>
+:map <leader>ls :CtrlPBuffer<cr>
 :nmap <C-T> :tabnew<CR>
 map ,f <C-p>
 
@@ -160,7 +161,6 @@ colorscheme solarized
 set backupdir=~/.cache/vim/backup/    " where to put backup files.
 set directory=~/.cache/vim/swap/      " where to put swap files.
 set undodir=~/.cache/vim/undo/      " where to put swap files.
-set undofile
 
 " Word count
 nnoremap <Leader>wc g<C-g>

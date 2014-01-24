@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/share/python:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Ruby
@@ -77,7 +77,7 @@ alias g="git"
 alias gprom="git pull --rebase origin master"
 alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
-alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin"
+alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
 alias cdp="cd ~/projects"
 alias cdbc="cd ~/projects/baseclinic"
 alias cdvim="cd ~/.vim"
