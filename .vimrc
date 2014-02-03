@@ -3,6 +3,7 @@ call pathogen#infect()
 
 " Some defaults (tabs, other things, etc) that janus gives us
 source ~/.vim/janus-settings.vim
+source ~/.vim/carls-git-grep.vim
 
 " Vim default register uses the OS X clipboard.
 " http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
