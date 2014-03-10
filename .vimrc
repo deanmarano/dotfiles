@@ -77,6 +77,7 @@ nm <Leader>/ <plug>NERDCommenterInvert
 vm <Leader>/ <plug>NERDCommenterInvert
 
 nnoremap <Leader>n :NERDTreeToggle<cr>
+nmap <Leader>f :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 "autocmd VimEnter * :NERDTreeToggle
 "autocmd VimEnter * wincmd p
@@ -161,7 +162,8 @@ colorscheme solarized
 
 set backupdir=~/.cache/vim/backup/    " where to put backup files.
 set directory=~/.cache/vim/swap/      " where to put swap files.
-set undodir=~/.cache/vim/undo/      " where to put swap files.
+set undodir=~/.cache/vim/undo/      " where to put undo files.
+set undofile
 
 " Word count
 nnoremap <Leader>wc g<C-g>
