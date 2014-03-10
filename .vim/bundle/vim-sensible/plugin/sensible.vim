@@ -20,14 +20,13 @@ endif
 set autoindent
 set backspace=indent,eol,start
 set complete-=i
-set showmatch
 set smarttab
 
 set nrformats-=octal
 set shiftround
 
 set ttimeout
-set ttimeoutlen=50
+set ttimeoutlen=100
 
 set incsearch
 " Use <C-L> to clear the highlighting of :set hlsearch.
