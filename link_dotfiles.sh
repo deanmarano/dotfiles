@@ -10,3 +10,6 @@ ln -s ~/Dropbox/dotfiles/.vimrc ~/.vimrc
 ln -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/Dropbox/dotfiles/.bashrc ~/.bashrc
 ln -s ~/Dropbox/dotfiles/.vim ~/.vim
+
+mkdir -p ~/bin
+ln -s ~/Dropbox/dotfiles/gpush.sh ~/bin/gpush.sh
