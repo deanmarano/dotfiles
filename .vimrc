@@ -34,6 +34,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>ev :e $MYVIMRC<cr>
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
+"open up my bashrc by using \eb (edit vim)
+:nnoremap <leader>eb :e ~/.bashrc<cr>
 
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
