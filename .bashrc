@@ -4,12 +4,16 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 export RUBY_HEAP_MIN_SLOTS=500000
+export RUBY_GC_HEAP_INIT_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
 # Java
 export JBOSS_HOME=~/.immutant/current/jboss
+
+# Docker
+export DOCKER_HOST=tcp://127.0.0.1:4243
 
 # Node
 export NODE_PATH="/usr/local/lib/node/bin"
@@ -70,7 +74,7 @@ alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
 alias cda="cd ~/groupon/accounting-service"
 alias cdb="cd ~/groupon/bling"
 alias cde="cd ~/groupon/dealestate"
-alias cdg="cd ~/groupon/groupon"
+cdg() { cd ~/groupon/; if [ $# -eq 1 ]; then cd $1; fi }
 alias cdh="cd ~/groupon/hermes"
 alias cds="cd ~/groupon/spinderella"
 
@@ -78,11 +82,15 @@ alias cds="cd ~/groupon/spinderella"
 alias t="tmux attach -t grpn || tmux new -s grpn"
 alias g="git"
 alias gprom="git pull --rebase origin master"
+alias gprum="git pull --rebase upstream master"
 alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
-alias cdp="cd ~/projects"
+
+cdp() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
+
 alias cdbc="cd ~/projects/baseclinic"
+alias cdsc="cd ~/smart-clinic/smartclinic-api"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
@@ -98,3 +106,4 @@ alias vi="/usr/local/bin/vim"
 alias clj="lein repl"
 alias psgrep=" ps ax | grep"
 alias web="python -m SimpleHTTPServer"
+alias gae="dev_appserver.py ."

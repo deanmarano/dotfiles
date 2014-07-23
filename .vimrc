@@ -181,3 +181,13 @@ set cryptmethod=blowfish
 " http://usevim.com/2013/11/08/set-history/
 "
 set history=100000
+
+" UTF-8 Line ending characters
+if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
+  let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+endif
+
+" Python
+" http://stackoverflow.com/questions/5601749/how-to-filter-out-files-by-extension-in-nerdtree
+let NERDTreeIgnore = ['\.pyc$']
+autocmd Filetype python setlocal ts=4 sts=4 sw=4

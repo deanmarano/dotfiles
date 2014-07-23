@@ -1,15 +1,15 @@
-mkdir -p ~/dotfile-backup/`date "+%Y-%m-%d"`
-mv ~/.vimrc ~/dotfile-backup/`date "+%Y-%m-%d"`
-mv ~/.vim ~/dotfile-backup/`date "+%Y-%m-%d"`
-mv ~/.bashrc ~/dotfile-backup/`date "+%Y-%m-%d"`
-mv ~/.gitconfig ~/dotfile-backup/`date "+%Y-%m-%d"`
-mv ~/.tmux.conf ~/dotfile-backup/`date "+%Y-%m-%d"`
+mkdir -p ~/dotfile-backup
+mv ~/.tmux.conf ~/dotfile-backup/.tmux.conf
+mv ~/.vimrc ~/dotfile-backup/.vimrc
+mv ~/.gitconfig ~/dotfile-backup/.gitconfig
+mv ~/.bashrc ~/dotfile-backup/.bashrc
+mv ~/.vim ~/dotfile-backup/.vim
 
-ln -s ~/Dropbox/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/Dropbox/dotfiles/.vimrc ~/.vimrc
-ln -s ~/Dropbox/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/Dropbox/dotfiles/.bashrc ~/.bashrc
-ln -s ~/Dropbox/dotfiles/.vim ~/.vim
+ln -s ~/.tmux.conf ~/Dropbox/new-dotfiles
+ln -s ~/.vimrc ~/Dropbox/new-dotfiles
+ln -s ~/.gitconfig ~/Dropbox/new-dotfiles
+ln -s ~/.bashrc ~/Dropbox/new-dotfiles
+ln -s ~/.vim ~/Dropbox/new-dotfiles
 
 mkdir -p ~/bin
-ln -s ~/Dropbox/dotfiles/gpush.sh ~/bin/gpush.sh
+ln -s ~/Dropbox\ \(Personal\)/dotfiles/gpush.sh ~/bin/gpush.sh
