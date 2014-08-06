@@ -55,8 +55,6 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-source ~/bin/gpush.sh
-
 # groupon
 alias be="bundle exec"
 alias bec="bundle exec cucumber --format pretty -color $1"
