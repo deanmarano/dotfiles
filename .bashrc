@@ -17,7 +17,6 @@ export DOCKER_HOST=tcp://127.0.0.1:4243
 
 # Node
 export NODE_PATH="/usr/local/lib/node/bin"
-export EDITOR="/usr/local/bin/vim"
 
 if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home ]; then
   export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
@@ -57,7 +56,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 source ~/bin/gpush.sh
-
 
 # groupon
 alias be="bundle exec"
@@ -102,8 +100,16 @@ alias sshatom="ssh dean@atom.deanoftech.com"
 alias sshfsatom="mkdir -p /Volumes/atom && sshfs dean@atom.deanoftech.com:/ /Volumes/atom/ -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=atom"
 alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && open vnc://atom.deanoftech.com:6000"
 
-alias vi="/usr/local/bin/vim"
 alias clj="lein repl"
 alias psgrep=" ps ax | grep"
 alias web="python -m SimpleHTTPServer"
 alias gae="dev_appserver.py ."
+if [ "$(expr $(uname -s))" == "Darwin" ]; then
+  export EDITOR="/usr/local/bin/vim"
+
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  # Do something under Linux platform
+  alias open="gnome-open"
+  export EDITOR="/usr/local/bin/vim"
+  export TERM=xterm-256color tmux
+fi

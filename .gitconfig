@@ -4,7 +4,7 @@
   email = dmarano@groupon.com
   name = Dean Marano
 [core]
-  editor = /usr/local/bin/vim
+  editor = vim
   autocrlf = input
 [diff]
   tool = vimdiff

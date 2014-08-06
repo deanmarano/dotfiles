@@ -1,13 +1,17 @@
 " Pathogen
-call pathogen#infect()
+execute pathogen#infect()
 
 " Some defaults (tabs, other things, etc) that janus gives us
 source ~/.vim/janus-settings.vim
 source ~/.vim/carls-git-grep.vim
-
-" Vim default register uses the OS X clipboard.
-" http://vim.wikia.com/wiki/Mac_OS_X_clipboard_sharing#Comments
-set clipboard=unnamed
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname =~ "Darwin"
+    source ~/.vim/osx.vim
+  elseif s:uname =~ "Linux"
+    source ~/.vim/linux.vim
+  endif
+endif
 
 " Geoff's hashrocket
 imap <silent> <C-l> <Space>=><Space>
