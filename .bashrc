@@ -110,4 +110,5 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   alias open="gnome-open"
   export EDITOR="/usr/local/bin/vim"
   export TERM=xterm-256color tmux
+  export RAILS_ENV=development
 fi
