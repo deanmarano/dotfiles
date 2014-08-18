@@ -1,0 +1,32 @@
+[color]
+  ui = auto
+[user]
+  email = dmarano@groupon.com
+  name = Dean Marano
+[core]
+  editor = vim
+  autocrlf = input
+[diff]
+  tool = vimdiff
+[difftool]
+  prompt = false
+[alias]
+  d = difftool
+  b = branch
+  ba = branch -a
+  ci = commit
+  cim = commit -m
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
+  unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
+  sha = rev-parse HEAD
+  merged=!"git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+  hub = "!gnome-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
+  pr = "!gnome-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
+[branch]
+  autosetuprebase = always
+[push]
+  default = current
+[credential]
+  helper = /usr/share/doc/git/contrib/credential/gnome-keyring/git-credential-gnome-keyring

@@ -93,7 +93,6 @@ alias gtd="git diff origin > ~/the.diff"
 alias lien="lein"
 
 # atom
-alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
 alias sshatom="ssh dean@atom.deanoftech.com"
 alias sshfsatom="mkdir -p /Volumes/atom && sshfs dean@atom.deanoftech.com:/ /Volumes/atom/ -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=atom"
 alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && open vnc://atom.deanoftech.com:6000"
@@ -111,4 +110,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   export EDITOR="/usr/local/bin/vim"
   export TERM=xterm-256color tmux
   export RAILS_ENV=development
+  alias sagi="sudo apt-get install -y"
+  alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
 fi
