@@ -85,8 +85,9 @@ alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v 
 
 cdp() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
 
+alias cd.="cd ~/dotfiles"
 alias cdbc="cd ~/projects/baseclinic"
-alias cdsc="cd ~/smart-clinic/smartclinic-api"
+alias cdsc="cd ~/smart-clinic/api"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/DePaul"
 alias gtd="git diff origin > ~/the.diff"
@@ -103,6 +104,7 @@ alias web="python -m SimpleHTTPServer"
 alias gae="dev_appserver.py ."
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   export EDITOR="/usr/local/bin/vim"
+  alias vi="/usr/local/bin/vim"
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform
