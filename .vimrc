@@ -1,5 +1,50 @@
-" Pathogen
-execute pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'benmills/vimux'
+Plugin 'danro/rename.vim'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mattn/emmet-vim'
+Plugin 'mikewest/vimroom'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'tjennings/git-grep-vim'
+Plugin 'jwhitley/vim-matchit'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'wakatime/vim-wakatime'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'jszakmeister/vim-togglecursor'
+
+" Plugin '/JavaScript-Indent'
+" Plugin '/operator-camelize.vim'
+" Plugin '/vim-haml'
+" Plugin '/vim-jade'
+" Plugin '/vim-javascript-syntax'
+" Plugin '/vim-less'
+" Plugin '/vim-rabl'
+" Plugin '/vim-scala'
+" Plugin '/vim-slim'
+" Plugin '/vim-spec-finder'
+" Plugin '/vim-stylus'
+
+call vundle#end()
+filetype plugin on
 
 " Some defaults (tabs, other things, etc) that janus gives us
 source ~/.vim/janus-settings.vim
