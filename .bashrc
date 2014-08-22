@@ -108,7 +108,7 @@ if [ "$(expr $(uname -s))" == "Darwin" ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform
-  alias open="gnome-open"
+  alias open="xdg-open"
   alias docker="sudo docker"
   export EDITOR="/usr/local/bin/vim"
   export TERM=xterm-256color tmux
