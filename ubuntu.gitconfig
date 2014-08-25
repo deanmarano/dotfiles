@@ -22,8 +22,8 @@
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   sha = rev-parse HEAD
   merged=!"git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
-  hub = "!gnome-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
-  pr = "!gnome-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
+  hub = "!xdg-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
+  pr = "!xdg-open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
 [branch]
   autosetuprebase = always
 [push]
