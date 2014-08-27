@@ -240,3 +240,13 @@ endif
 " http://stackoverflow.com/questions/5601749/how-to-filter-out-files-by-extension-in-nerdtree
 let NERDTreeIgnore = ['\.pyc$']
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
+
+" Always show the status line
+:set laststatus=2
+
+" Make Y consistent with C and D.  See :help Y.
+nnoremap Y y$
+
+" Use <C-L> to clear the highlighting of :set hlsearch.
+noremap <silent> <C-L> :nohlsearch<CR><C-L>
+-
