@@ -57,37 +57,21 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-# groupon
-alias be="bundle exec"
-alias bec="bundle exec cucumber --format pretty -color $1"
-alias bprm="build push rebase master $1"
-alias groupon-uat-deploy="bundle exec cap uat web deploy"
-alias remote_bundle="http_proxy=http://localhost:3132 bundle"
-
-# deal estate
-alias prod-pending="HOSTFILTER=dealestate-irb1.snc1 cap production deploy:pending"
-alias sshprodweb="ssh dealestate_deploy@dealestate-app1.snc1"
-alias sshstagingweb="ssh dealestate_deploy@dealestate-app1-uat.snc1"
-alias sshproddb="ssh dealestate_deploy@dealestate-db1.snc1"
-alias cda="cd ~/groupon/accounting-service"
-alias cdb="cd ~/groupon/bling"
-alias cde="cd ~/groupon/dealestate"
-cdg() { cd ~/groupon/; if [ $# -eq 1 ]; then cd $1; fi }
-alias cdh="cd ~/groupon/hermes"
-alias cds="cd ~/groupon/spinderella"
-
 # cli tools
 alias t="tmux attach -t grpn || tmux new -s grpn"
 alias g="git"
 alias gprom="git pull --rebase origin master"
 alias gprum="git pull --rebase upstream master"
+alias gprod="git pull --rebase origin dev"
 alias gaap="git add -A && git commit --amend && git push -f"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
 
-cdp() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
+cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
+cdpo() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
 
 alias cd.="cd ~/dotfiles"
+alias cd3="cd ~/project/three-joys-ui"
 alias cdbc="cd ~/projects/baseclinic"
 alias cdsc="cd ~/smart-clinic/api"
 alias cdvim="cd ~/.vim"
@@ -118,3 +102,5 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   alias sagi="sudo apt-get install -y"
   alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
 fi
+
+source ~/dotfiles/grpn.sh
