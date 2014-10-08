@@ -1,6 +1,8 @@
 export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+ulimit -n 2048
+
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 export RUBY_HEAP_MIN_SLOTS=500000

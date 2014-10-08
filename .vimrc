@@ -30,6 +30,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'jszakmeister/vim-togglecursor'
+Plugin 'wavded/vim-stylus'
 
 " Plugin '/JavaScript-Indent'
 " Plugin '/operator-camelize.vim'
