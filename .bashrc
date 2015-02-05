@@ -69,15 +69,17 @@ alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v 
 
 cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
 cdpo() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
+words() { vi /Users/dmarano/Dropbox/Documents/750Words/`date +%Y.%m.%d`.txt; }
 
 alias cd.="cd ~/dotfiles"
 alias cd3="cd ~/project/three-joys-ui"
 alias cdbc="cd ~/projects/baseclinic"
 alias cdsc="cd ~/smart-clinic/api"
 alias cdvim="cd ~/.vim"
-alias cdd="cd ~/Documents/DePaul"
+alias cdd="cd ~/Documents/"
 alias gtd="git diff origin > ~/the.diff"
 alias lien="lein"
+alias sync_music="rsync -vtr --size-only dean@fusion.local:\"/media/zeta/My\ MP3s\" /Users/dmarano/Music/"
 
 # atom
 alias sshatom="ssh dean@atom.deanoftech.com"
@@ -90,7 +92,7 @@ alias web="python -m SimpleHTTPServer"
 alias gae="dev_appserver.py ."
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   export EDITOR="/usr/local/bin/vim"
-  alias vi="/usr/local/bin/vim"
+  alias vi="/usr/local/bin/nvim"
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform

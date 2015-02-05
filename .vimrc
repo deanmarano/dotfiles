@@ -225,12 +225,12 @@ nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg
 
 " Excryption scheme
 " http://usevim.com/2013/11/01/vim-encryption/
-set cryptmethod=blowfish
+" set cryptmethod=blowfish
 
 " History size
 " http://usevim.com/2013/11/08/set-history/
 "
-set history=100000
+set history=10000
 
 " UTF-8 Line ending characters
 if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
@@ -251,3 +251,4 @@ nnoremap Y y$
 " Use <C-L> to clear the highlighting of :set hlsearch.
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
 -
+set backupskip=/tmp/*,/private/tmp/*

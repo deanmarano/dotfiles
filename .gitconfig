@@ -6,6 +6,7 @@
 [core]
   editor = vim
   autocrlf = input
+	excludesfile = /Users/dmarano/dotfiles/gitignore
 [diff]
   tool = vimdiff
 [difftool]
