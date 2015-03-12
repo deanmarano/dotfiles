@@ -7,6 +7,7 @@ mv ~/.vim ~/dotfile-backup/.vim
 
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/.vimrc ~/.nvimrc
 
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -16,5 +17,6 @@ fi
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/.vim ~/.nvim
 
 mkdir -p ~/bin
