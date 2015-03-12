@@ -106,3 +106,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 source ~/dotfiles/grpn.sh
+
+export NVM_DIR="`echo $HOME`/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
