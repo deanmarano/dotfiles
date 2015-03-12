@@ -58,7 +58,7 @@ GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 # cli tools
-alias t="tmux attach -t grpn || tmux new -s grpn"
+alias t="tmux attach -t `hostname` || tmux new -s `hostname`"
 alias g="git"
 alias gprom="git pull --rebase origin master"
 alias gprum="git pull --rebase upstream master"
