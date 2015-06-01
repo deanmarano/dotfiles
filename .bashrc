@@ -1,7 +1,7 @@
 export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-ulimit -n 2048
+ulimit -n 4096
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
@@ -73,13 +73,12 @@ words() { vi /Users/dmarano/Dropbox/Documents/750Words/`date +%Y.%m.%d`.txt; }
 
 alias cd.="cd ~/dotfiles"
 alias cd3="cd ~/project/three-joys-ui"
-alias cdbc="cd ~/projects/baseclinic"
-alias cdsc="cd ~/smart-clinic/api"
+alias cdsp="cd ~/Documents/Coursera/audio-001"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/"
 alias gtd="git diff origin > ~/the.diff"
 alias lien="lein"
-alias sync_music="rsync -vtr --size-only dean@fusion.local:\"/media/zeta/My\ MP3s\" /Users/dmarano/Music/"
+alias sync_music="rsync -vtr --size-only fusion:\"/media/zeta/My\ MP3s\" /Users/dmarano/Music/"
 
 # atom
 alias sshatom="ssh dean@atom.deanoftech.com"
