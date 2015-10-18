@@ -69,7 +69,7 @@ alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v 
 
 cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
 cdpo() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
-words() { vi /Users/dmarano/Dropbox/Documents/750Words/`date +%Y.%m.%d`.txt; }
+words() { vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md; }
 
 alias cd.="cd ~/dotfiles"
 alias cd3="cd ~/project/three-joys-ui"
