@@ -16,6 +16,7 @@ Plugin 'ervandew/supertab'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'mikewest/vimroom'
+
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -32,6 +33,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'wavded/vim-stylus'
 Plugin 'deanmarano/fold_license'
+Plugin 'wincent/terminus'
+Plugin 'derekwyatt/vim-scala'
 
 " Plugin '/JavaScript-Indent'
 " Plugin '/operator-camelize.vim'
@@ -40,7 +43,6 @@ Plugin 'deanmarano/fold_license'
 " Plugin '/vim-javascript-syntax'
 " Plugin '/vim-less'
 " Plugin '/vim-rabl'
-" Plugin '/vim-scala'
 " Plugin '/vim-slim'
 " Plugin '/vim-spec-finder'
 " Plugin '/vim-stylus'
@@ -85,8 +87,10 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>ev :e $MYVIMRC<cr>
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
-"open up my bashrc by using \eb (edit vim)
+"open up my bashrc by using \eb (edit bash)
 :nnoremap <leader>eb :e ~/.bashrc<cr>
+"open up my /etc/hosts by using \eh (edit /etc/hosts)
+:nnoremap <leader>eh :e /etc/hosts<cr>
 
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>

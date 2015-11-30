@@ -77,6 +77,7 @@ alias cdsp="cd ~/Documents/Coursera/audio-001"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/"
 alias gtd="git diff origin > ~/the.diff"
+alias kaboom="rm -rf node_modules bower_components && npm cache clear && npm install & bower install"
 alias lien="lein"
 alias sync_music="rsync -vtr --size-only fusion:\"/media/zeta/My\ MP3s\" /Users/dmarano/Music/"
 
@@ -87,7 +88,7 @@ alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && op
 
 alias clj="lein repl"
 alias psgrep=" ps ax | grep"
-alias web="python -m SimpleHTTPServer"
+alias web="http-server -p 8000"
 alias gae="dev_appserver.py ."
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   export EDITOR="/usr/local/bin/vim"
