@@ -79,7 +79,7 @@ alias cdd="cd ~/Documents/"
 alias gtd="git diff origin > ~/the.diff"
 alias kaboom="rm -rf node_modules bower_components && npm cache clear && npm install & bower install"
 alias lien="lein"
-alias sync_music="rsync -vtr --size-only fusion:\"/media/zeta/My\ MP3s\" /Users/dmarano/Music/"
+alias sync_music="rsync -vtr --size-only fusion:\"/mnt/eta/My\ MP3s\" ~/Music/"
 
 # atom
 alias sshatom="ssh dean@atom.deanoftech.com"
