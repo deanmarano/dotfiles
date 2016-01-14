@@ -91,7 +91,7 @@ alias psgrep=" ps ax | grep"
 alias web="http-server -p 8000"
 alias gae="dev_appserver.py ."
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
-  export EDITOR="/usr/local/bin/vim"
+  export EDITOR="/usr/local/bin/nvim"
   alias vi="/usr/local/bin/nvim"
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then

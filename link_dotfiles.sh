@@ -16,7 +16,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/.vim ~/.nvim
+mkdir -p ~/.config
+ln -s ~/dotfiles/.vim ~/nvim
+ln -s ~/dotfiles/.vimrc ~/nvim/init.vim
 
 mkdir -p ~/bin

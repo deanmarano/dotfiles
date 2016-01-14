@@ -44,7 +44,7 @@ Plugin 'derekwyatt/vim-scala'
 " Plugin '/vim-less'
 " Plugin '/vim-rabl'
 " Plugin '/vim-slim'
-" Plugin '/vim-spec-finder'
+Plugin 'skwp/vim-spec-finder'
 " Plugin '/vim-stylus'
 
 call vundle#end()
@@ -167,7 +167,7 @@ if has('gui_running')
 endif
 
 " find all rebase/merge conflicts
-nnoremap <Leader>fc :GitGrep '<<<<'<cr>
+nnoremap <Leader>fc :GitGrep '<<<<<<'<cr>
 
 nnoremap <Leader>gg :GitGrep<Space>
 
