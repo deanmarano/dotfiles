@@ -1,4 +1,4 @@
-export PATH="$HOME/bin:/usr/local/heroku/bin:~/groupon/groupon-bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 ulimit -n 4096
@@ -105,7 +105,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
 fi
 
-source ~/dotfiles/grpn.sh
+source ~/dotfiles/espark.sh
 
 export NVM_DIR="`echo $HOME`/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
