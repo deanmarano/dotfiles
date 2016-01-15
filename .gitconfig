@@ -1,23 +1,17 @@
 [color]
   ui = auto
 [user]
-  email = dmarano@groupon.com
+  email = dean.marano@gmail.com
   name = Dean Marano
 [core]
   editor = vim
   autocrlf = input
-	excludesfile = /Users/dmarano/dotfiles/gitignore
+  excludesfile = /Users/dmarano/dotfiles/gitignore
 [diff]
   tool = vimdiff
 [difftool]
   prompt = false
 [alias]
-  d = difftool
-  b = branch
-  ba = branch -a
-  ci = commit
-  cim = commit -m
-  co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
