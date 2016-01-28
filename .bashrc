@@ -68,7 +68,7 @@ alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch 
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
 
 cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
-cdpo() { cd ~/projects/; if [ $# -eq 1 ]; then cd $1; fi };
+cdg() { cd ~/github/deanmarano/; if [ $# -eq 1 ]; then cd $1; fi };
 words() { vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md; }
 
 alias cd.="cd ~/dotfiles"
