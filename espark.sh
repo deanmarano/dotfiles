@@ -1,1 +1,1 @@
-alias cde="cd ~/espark"
+alias cde="cd ~/github/espark"
