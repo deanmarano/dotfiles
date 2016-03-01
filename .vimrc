@@ -99,6 +99,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 " Run the current spec with rspec
 map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
 
+" Run the current spec with zeus rspec
+map <Leader>rz :call VimuxRunCommand("clear; zeus rspec " . bufname("%"))<CR>
+
 " Run the current line with rspec
 map <Leader>rt :call VimuxRunCommand("clear; rspec " . bufname("%") . ':' .  line('.'))<CR>
 
@@ -167,7 +170,7 @@ if has('gui_running')
 endif
 
 " find all rebase/merge conflicts
-nnoremap <Leader>fc :GitGrep '<<<<<<'<cr>
+nnoremap <Leader>fc :GitGrep '<<<<<<<'<cr>
 
 nnoremap <Leader>gg :GitGrep<Space>
 
