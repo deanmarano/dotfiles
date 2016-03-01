@@ -19,5 +19,6 @@ ln -s ~/dotfiles/.bashrc ~/.bashrc
 mkdir -p ~/.config
 ln -s ~/dotfiles/.vim ~/nvim
 ln -s ~/dotfiles/.vimrc ~/nvim/init.vim
+ln -s ~/dotfiles/.gemrc ~/.gemrc
 
 mkdir -p ~/bin
