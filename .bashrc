@@ -74,6 +74,7 @@ words() { vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md; }
 
 alias cd.="cd ~/dotfiles"
 alias cd3="cd ~/project/three-joys-ui"
+alias cdk="cd ~/github/deanmarano/karmako"
 alias cdsp="cd ~/Documents/Coursera/audio-001"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/"
