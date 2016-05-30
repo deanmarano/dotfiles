@@ -13,7 +13,7 @@ Plugin 'benmills/vimux'
 Plugin 'danro/rename.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'ervandew/supertab'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'mikewest/vimroom'
 
