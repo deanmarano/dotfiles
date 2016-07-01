@@ -33,6 +33,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'jszakmeister/vim-togglecursor'
 Plugin 'wavded/vim-stylus'
 Plugin 'deanmarano/fold_license'
+Plugin 'tpope/vim-rails'
 Plugin 'wincent/terminus'
 Plugin 'derekwyatt/vim-scala'
 
