@@ -13,11 +13,14 @@
   prompt = false
 [alias]
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  whip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
   wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
+  unwhip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   sha = rev-parse HEAD
   merged=!"git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git remote prune origin"
   hub = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
+  pulls = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pulls\""
   pr = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
 [branch]
   autosetuprebase = always
@@ -25,3 +28,7 @@
   default = current
 [credential]
   helper = osxkeychain
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
