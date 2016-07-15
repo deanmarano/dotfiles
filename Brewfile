@@ -1,3 +1,5 @@
+alpine
+amazon-ecs-cli
 autoconf
 automake
 boost
@@ -11,12 +13,14 @@ dos2unix
 freetype
 gcc
 gdbm
+getmail
 gettext
 git
 glib
 gmp
 gnutls
 go
+graphviz
 icu4c
 imagemagick
 iproute2mac
@@ -51,6 +55,7 @@ phantomjs192
 pixman
 pkg-config
 postgresql
+pssh
 pv
 python
 qemu
@@ -59,6 +64,7 @@ readline
 reattach-to-user-namespace
 redis
 rsync
+sl
 sqlite
 sshfs
 tmate
