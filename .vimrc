@@ -1,59 +1,32 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"""
+""" Vundle
+"""
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'benmills/vimux'
-Plugin 'danro/rename.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ervandew/supertab'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'mikewest/vimroom'
-
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tjennings/git-grep-vim'
-Plugin 'jwhitley/vim-matchit'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'wakatime/vim-wakatime'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'jszakmeister/vim-togglecursor'
-Plugin 'wavded/vim-stylus'
-Plugin 'deanmarano/fold_license'
-Plugin 'tpope/vim-rails'
-Plugin 'wincent/terminus'
-Plugin 'derekwyatt/vim-scala'
-
-" Plugin '/JavaScript-Indent'
-" Plugin '/operator-camelize.vim'
-" Plugin '/vim-haml'
-" Plugin '/vim-jade'
-" Plugin '/vim-javascript-syntax'
-" Plugin '/vim-less'
-" Plugin '/vim-rabl'
-" Plugin '/vim-slim'
-Plugin 'skwp/vim-spec-finder'
-" Plugin '/vim-stylus'
+source ~/.vim/Vundlefile.vim
 
 call vundle#end()
 filetype plugin on
 
-" Some defaults (tabs, other things, etc) that janus gives us
+"""
+""" Some defaults (tabs, line endings, etc)
+"""
+
 source ~/.vim/janus-settings.vim
 source ~/.vim/carls-git-grep.vim
+
+"""
+""" OS Specific clipboard settings
+"""
+
 if has("unix")
   let s:uname = system("uname -s")
   if s:uname =~ "Darwin"
@@ -72,7 +45,7 @@ imap <silent> <C-l> <Space>=><Space>
 :nmap <C-T> :tabnew<CR>
 map ,f <C-p>
 
-" Let CtrlP cache hang around on exit
+" Let CtrlP cache hang around on exit - useful for very large projects
 let g:ctrlp_clear_cache_on_exit = 0
 
 " set max files for CtrlP to scan https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
@@ -96,42 +69,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
 
-"vimux
-" Run the current spec with rspec
-map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
-
-" Run the current spec with zeus rspec
-map <Leader>rz :call VimuxRunCommand("clear; zeus rspec " . bufname("%"))<CR>
-
-" Run the current line with rspec
-map <Leader>rt :call VimuxRunCommand("clear; rspec " . bufname("%") . ':' .  line('.'))<CR>
-
-" Run the current feature with cucumber
-map <Leader>rc :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
-
-" Run the current feature with cucumber
-map <Leader>rf :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
-
-" Run the current script with r
-map <Leader>rr :call VimuxRunCommand("clear; r -q -f " . bufname("%"))<CR>
-
-" Prompt for a command to run
-map <Leader>rp :VimuxPromptCommand<CR>
-
-" Run last command executed by VimuxRunCommand
-map <Leader>rl :VimuxRunLastCommand<CR>
-
-" Inspect runner pane
-map <Leader>ri :VimuxInspectRunner<CR>
-
-" Close all other tmux panes in current window
-map <Leader>rx :VimuxClosePanes<CR>
-
-" Close vim tmux runner opened by VimuxRunCommand
-map <Leader>rq :VimuxCloseRunner<CR>
-
-" Interrupt any command running in the runner pane
-map <Leader>rs :VimuxInterruptRunner<CR>nnoremap <leader>t :call RunVimTmuxCommand()<cr>
+source ~/.vim/vimux.vim
 
 "map nerdcommenter to \/
 nm <Leader>/ <plug>NERDCommenterInvert
@@ -154,27 +92,16 @@ inoremap <C-k> <Esc>:m-2<CR>==gi
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
 
-" use the mouse!!
+" use the mouse
 " http://ayaz.wordpress.com/2010/10/19/using-mouse-inside-vim-on-terminal-app/
 set mouse=a
-
-" MacVim settings
-if has('gui_running')
-  syntax enable
-  set guifont=Monaco:h15
-
-  let g:solarized_termtrans=1
-  let g:solarized_termcolors=256
-
-  colorscheme solarized
-  set guioptions=egmrt
-endif
 
 " find all rebase/merge conflicts
 nnoremap <Leader>fc :GitGrep '<<<<<<<'<cr>
 
 nnoremap <Leader>gg :GitGrep<Space>
 
+" Write plain text. Nice for READMEs and other plain text.
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=ta<cr>
 nnoremap <Leader>uwt :set formatoptions=<cr>
 
@@ -199,9 +126,6 @@ cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 
-" Resize splits when the window is resized http://vimbits.com/bits/223
-au VimResized * exe "normal! \<c-w>="
-
 " Clear trailing whitespace
 nnoremap <Leader>ws :%s/\s\+$//<cr>
 
@@ -214,17 +138,19 @@ endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
 
-set background=light
-
-colorscheme solarized
-"
-" Backup and swap files
-"
+"""
+""" Backup and swap files
+"""
 
 set backupdir=~/.cache/vim/backup/    " where to put backup files.
 set directory=~/.cache/vim/swap/      " where to put swap files.
 set undodir=~/.cache/vim/undo/      " where to put undo files.
 set undofile
+set backupskip=/tmp/*,/private/tmp/*
+
+" History size
+" http://usevim.com/2013/11/08/set-history/
+set history=10000
 
 " Word count
 nnoremap <Leader>wc g<C-g>
@@ -232,16 +158,7 @@ nnoremap <Leader>wc g<C-g>
 " Format JSON
 nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg
 
-" Excryption scheme
-" http://usevim.com/2013/11/01/vim-encryption/
-" set cryptmethod=blowfish
-
-" History size
-" http://usevim.com/2013/11/08/set-history/
-"
-set history=10000
-
-" UTF-8 Line ending characters
+" highlight UTF-8 Line ending characters
 if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
   let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 endif
@@ -251,13 +168,31 @@ endif
 let NERDTreeIgnore = ['\.pyc$']
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
-" Always show the status line
-:set laststatus=2
-
-" Make Y consistent with C and D.  See :help Y.
-nnoremap Y y$
-
 " Use <C-L> to clear the highlighting of :set hlsearch.
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
--
-set backupskip=/tmp/*,/private/tmp/*
+
+"""
+""" Visual Tweaks
+"""
+
+" Resize splits when the window is resized http://vimbits.com/bits/223
+au VimResized * exe "normal! \<c-w>="
+
+set background=light
+
+colorscheme solarized
+
+" Always show the status line
+set laststatus=2
+
+" MacVim visual settings
+if has('gui_running')
+  syntax enable
+  set guifont=Monaco:h15
+
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+
+  colorscheme solarized
+  set guioptions=egmrt
+endif

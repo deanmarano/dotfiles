@@ -4,7 +4,6 @@
 
 set nocompatible      " Use vim, no vi defaults
 set number            " Show line numbers
-set encoding=utf-8    " Set default encoding to UTF-8
 
 ""
 "" Whitespace
