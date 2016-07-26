@@ -1,8 +1,11 @@
 alpine
 amazon-ecs-cli
+android-platform-tools
+android-sdk
 autoconf
 automake
 boost
+brew-cask-completion
 chromedriver
 cmake
 ctags
@@ -10,6 +13,7 @@ docker
 docker-compose
 docker-machine
 dos2unix
+expat
 freetype
 gcc
 gdbm
@@ -43,9 +47,12 @@ mit-scheme
 mpfr
 msgpack
 mysql56
+ncurses
 neovim
 nettle
 node
+nspr
+nss
 oniguruma
 openssh
 openssl
