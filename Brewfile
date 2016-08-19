@@ -1,9 +1,11 @@
+ack
 alpine
 amazon-ecs-cli
 android-platform-tools
 android-sdk
 autoconf
 automake
+autossh
 boost
 brew-cask-completion
 chromedriver

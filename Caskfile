@@ -21,6 +21,7 @@ heroku-toolbelt (!)
 iterm2
 itsycal
 java
+ngrok
 openemu
 osxfuse
 postgres
@@ -36,5 +37,6 @@ sublime-text
 the-unarchiver
 transmission
 virtualbox
+vivaldi
 vlc
 xquartz
