@@ -98,6 +98,9 @@ if [ "$(expr $(uname -s))" == "Darwin" ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform
+  source /etc/bash_completion.d/git-prompt
+  source /home/dean/.linuxbrew/etc/bash_completion.d/tmux
+  source /home/dean/.linuxbrew/etc/bash_completion.d/brew
   alias open="xdg-open"
   alias docker="sudo docker"
   export EDITOR="/usr/local/bin/vim"
@@ -105,6 +108,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   export RAILS_ENV=development
   alias sagi="sudo apt-get install -y"
   alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
 source ~/dotfiles/espark.sh

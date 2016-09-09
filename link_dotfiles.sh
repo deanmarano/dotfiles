@@ -17,15 +17,15 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   ln -s ~/dotfiles/ubuntu.gitconfig ~/.gitconfig
 fi
 
-mkdir -p ~/.config
-mkdir -p ~/bin
-mkdir -p ~/.cache/vim/{backup,swap,undo}
+mkdir -p ~/.cache/swap/{backup,undo,swap}
+mkdir -p ~/{bin,.config,.ssh}
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vim ~/.nvim
-ln -s ~/dotfiles/vimrc ~/nvim/init.vim
+ln -s ~/dotfiles/vimrc ~/.nvim/init.vim
 ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/ssh.config ~/.ssh/config
 
