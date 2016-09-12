@@ -24,10 +24,14 @@ if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/j
   export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
 fi
 
-export HISTCONTROL=erasedups
-export HISTSIZE=1000000
+HISTCONTROL=erasedups
 
+# append to the history file, don't overwrite it
 shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000000
+
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
@@ -57,41 +61,8 @@ fi
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
-# cli tools
-alias t="tmux attach -t `hostname` || tmux new -s `hostname`"
-alias g="git"
-alias gprom="git pull --rebase origin master"
-alias gprum="git pull --rebase upstream master"
-alias gprod="git pull --rebase origin dev"
-alias gaap="git add -A && git commit --amend && git push -f"
-alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
-alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
+source ~/dotfiles/bash_aliases
 
-cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
-cddm() { cd ~/github/deanmarano/; if [ $# -eq 1 ]; then cd $1; fi };
-cdg() { cd ~/github/; if [ $# -eq 1 ]; then cd $1; fi };
-words() { vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md; }
-
-alias cd.="cd ~/dotfiles"
-alias cd3="cd ~/project/three-joys-ui"
-alias cdk="cd ~/github/deanmarano/karmako"
-alias cdsp="cd ~/Documents/Coursera/audio-001"
-alias cdvim="cd ~/.vim"
-alias cdd="cd ~/Documents/"
-alias gtd="git diff origin > ~/the.diff"
-alias kaboom="rm -rf node_modules bower_components && npm cache clear && npm install & bower install"
-alias lien="lein"
-alias sync_music="rsync -vtr --size-only fusion:\"/mnt/eta/My\ MP3s\" ~/Music/"
-
-# atom
-alias sshatom="ssh dean@atom.deanoftech.com"
-alias sshfsatom="mkdir -p /Volumes/atom && sshfs dean@atom.deanoftech.com:/ /Volumes/atom/ -oauto_cache,reconnect,defer_permissions,negative_vncache,volname=atom"
-alias vncatom="ssh dean@atom.deanoftech.com 'tightvncserver :1' && sleep 3 && open vnc://atom.deanoftech.com:6000"
-
-alias clj="lein repl"
-alias psgrep=" ps ax | grep"
-alias web="http-server -p 8000"
-alias gae="dev_appserver.py ."
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   export EDITOR="/usr/local/bin/nvim"
   alias vi="/usr/local/bin/nvim"
@@ -113,8 +84,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
 
-source ~/dotfiles/espark.sh
-source ~/dotfiles/khan.sh
-
+# Load nvm
 export NVM_DIR="`echo $HOME`/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
