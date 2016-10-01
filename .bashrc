@@ -32,8 +32,11 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000000
 
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+if [ -t 1 ]
+then
+  bind '"\e[A":history-search-backward'
+  bind '"\e[B":history-search-forward'
+fi
 
 # Set git autocompletion and PS1 integration
 if [ -f  /usr/local/etc/bash_completion.d/git-completion.bash ]; then
