@@ -1,8 +1,6 @@
 export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-ulimit -n 4096
-
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
 export RUBY_HEAP_MIN_SLOTS=500000
@@ -69,6 +67,7 @@ source ~/dotfiles/bash_aliases
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   export EDITOR="/usr/local/bin/nvim"
   alias vi="/usr/local/bin/nvim"
+  ulimit -n 4096
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform
