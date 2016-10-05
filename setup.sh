@@ -1,14 +1,14 @@
 # add user
-sudo adduser dean --disable-password --gecos ""
+# sudo adduser dean --disable-password --gecos ""
 # give sudo permissions
-sudo adduser dean sudo
+# sudo adduser dean sudo
 
 # install deps
 sudo apt-get update
 sudo apt-get install -y git vim tmux
 
 # setup ssh login
-sudo su dean
+# sudo su dean
 cd
 mkdir .ssh
 curl -o ~/.ssh/authorized_keys https://github.com/deanmarano.keys
