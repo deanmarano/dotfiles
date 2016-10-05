@@ -80,7 +80,8 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   done
   alias open="xdg-open"
   alias docker="sudo docker"
-  export EDITOR="/usr/local/bin/vim"
+  alias vi="/home/dean/.linuxbrew/bin/vim"
+  export EDITOR="/home/dean/.linuxbrew/bin/vim"
   export TERM=xterm-256color tmux
   export RAILS_ENV=development
   alias sagi="sudo apt-get install -y"
