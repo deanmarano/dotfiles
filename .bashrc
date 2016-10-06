@@ -103,5 +103,4 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 fi
 
 # Load nvm
-export NVM_DIR="`echo $HOME`/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+. "$(brew --prefix nvm)/nvm.sh"
