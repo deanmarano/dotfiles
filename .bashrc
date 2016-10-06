@@ -89,6 +89,17 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   export PATH="$HOME/.linuxbrew/bin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+
+  if [ -f  /usr/local/bin/croutonwebsocket ]; then
+    # Do chromeOS things
+    if ! pidof -x "croutonwebsocket" >/dev/null; then
+      croutonwebsocket &
+    fi
+    export BROWSER="croutonurlhandler"
+    # hack until I can figure out the clipboard
+    alias xclip="croutonurlhandler"
+  fi
 fi
 
 # Load nvm
