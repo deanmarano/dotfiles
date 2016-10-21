@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+if ARGV.length != 1
+  puts 'open requires one argument'
+  exit
+end
+
+path = File.absolute_path(ARGV[0])
+if path.match(/http/)
+  # nothing to do for URLs
+elsif path.match(/Downloads/)
+  p 'in Downloads'
+  # strip local path
+  path.sub!("#{Dir.home}/Downloads/", '')
+  path = "file:///home/chronos/u-584d25d7956f7a7b0178e1a9a8b8ba2cfba6e829/Downloads/#{path}"
+  # don't need to move it
+else
+  p 'copying...'
+  basename = File.basename(path)
+  FileUtils.mkdir_p("#{Dir.home}/Downloads/tmp")
+  FileUtils.cp(path, "#{Dir.home}/Downloads/tmp/#{basename}")
+  path = "file:///home/chronos/u-584d25d7956f7a7b0178e1a9a8b8ba2cfba6e829/Downloads/tmp/#{basename}"
+  # move to tmp directory
+end
+`croutonurlhandler #{path}`
