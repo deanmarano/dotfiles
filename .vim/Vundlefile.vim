@@ -1,6 +1,7 @@
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'benmills/vimux'
+Plugin 'bilalq/lite-dfm'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'danro/rename.vim'
 Plugin 'deanmarano/fold_license'
