@@ -5,14 +5,16 @@ alias gprum="git pull --rebase upstream master"
 alias gprod="git pull --rebase origin dev"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"
+alias localnet="nmap -sn 192.168.1.0/24 -oG - | awk '/Up$/{print $2}'"
 
 cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
 cddm() { cd ~/github/deanmarano/; if [ $# -eq 1 ]; then cd $1; fi };
 cdg() { cd ~/github/; if [ $# -eq 1 ]; then cd $1; fi };
-words() { vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'; }
-links() { vi ~/Dropbox/Documents/links/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'; }
+alias words="vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'"
+alias links="vi ~/Dropbox/Documents/links/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'"
 
-alias du.="du -h --max-depth=1 ."
+alias du="du -h --max-depth=1 ."
+alias dd="dcfldd"
 alias cd.="cd ~/dotfiles"
 alias cdvim="cd ~/.vim"
 alias cdd="cd ~/Documents/"
