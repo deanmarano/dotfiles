@@ -1,3 +1,4 @@
+set shell=bash                " set default shell
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -65,6 +66,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>eb :e ~/.bashrc<cr>
 "open up my /etc/hosts by using \eh (edit /etc/hosts)
 :nnoremap <leader>eh :e /etc/hosts<cr>
+
+nnoremap <Leader>z :LiteDFMToggle<CR>:silent !tmux set status > /dev/null 2>&1<CR>:redraw!<CR>
 
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
