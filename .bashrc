@@ -1,5 +1,6 @@
 export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export LC_ALL=en_US.UTF-8
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
