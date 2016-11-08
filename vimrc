@@ -66,6 +66,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>eb :e ~/.bashrc<cr>
 "open up my /etc/hosts by using \eh (edit /etc/hosts)
 :nnoremap <leader>eh :e /etc/hosts<cr>
+"open up my /.tmux.conf by using \et (edit ~/.tmux.conf)
+:nnoremap <leader>et :e ~/.tmux.conf<cr>
 
 nnoremap <Leader>z :LiteDFMToggle<CR>:silent !tmux set status > /dev/null 2>&1<CR>:redraw!<CR>
 
