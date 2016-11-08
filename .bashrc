@@ -42,11 +42,6 @@ if [ -f  /usr/local/etc/bash_completion.d/git-completion.bash ]; then
   . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
 
-if [ -f  /usr/local/etc/bash_completion.d/R ]; then
-  . /usr/local/etc/bash_completion.d/R
-fi
-
-
 if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
     . /usr/local/etc/bash_completion.d/git-prompt.sh
 fi
@@ -60,6 +55,17 @@ if [ -f  /usr/local/etc/bash_completion.d/tmux ]; then
   . /usr/local/etc/bash_completion.d/tmux
 fi
 
+if [ -f  /usr/local/etc/bash_completion.d/R ]; then
+  . /usr/local/etc/bash_completion.d/R
+fi
+
+if [ -d  /home/dean/.linuxbrew/etc/bash_completion.d ]; then
+  for f in /home/dean/.linuxbrew/etc/bash_completion.d/**; do
+     . $f
+  done
+fi
+
+# Set git autocompletion and PS1 integration
 GIT_PS1_SHOWDIRTYSTATE=true
 PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
@@ -76,9 +82,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   if [ -f /etc/bash_completion.d/git-prompt ]; then
     source /etc/bash_completion.d/git-prompt
   fi
-  for f in /home/dean/.linuxbrew/etc/bash_completion.d/**; do
-     . $f
-  done
   alias open="xdg-open"
   alias docker="sudo docker"
   alias vi="/home/dean/.linuxbrew/bin/vim"
