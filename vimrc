@@ -58,16 +58,15 @@ let g:ctrlp_match_window = 'max:20'
 " expand %% to current directory - from Kevin B., from DAS
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-"open up my vimrc by using \ev (edit vim)
+" Commonly edited files
 :nnoremap <leader>ev :e $MYVIMRC<cr>
+:nnoremap <leader>eb :e ~/.bashrc<cr>
+:nnoremap <leader>eh :e /etc/hosts<cr>
+:nnoremap <leader>et :e ~/.tmux.conf<cr>
+:nnoremap <leader>ef :e ~/dotfiles/config.fish<cr>
+
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
-"open up my bashrc by using \eb (edit bash)
-:nnoremap <leader>eb :e ~/.bashrc<cr>
-"open up my /etc/hosts by using \eh (edit /etc/hosts)
-:nnoremap <leader>eh :e /etc/hosts<cr>
-"open up my /.tmux.conf by using \et (edit ~/.tmux.conf)
-:nnoremap <leader>et :e ~/.tmux.conf<cr>
 
 nnoremap <Leader>z :LiteDFMToggle<CR>:silent !tmux set status > /dev/null 2>&1<CR>:redraw!<CR>
 
