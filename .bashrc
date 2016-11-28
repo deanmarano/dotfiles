@@ -90,7 +90,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   export RAILS_ENV=development
   alias sagi="sudo apt-get install -y"
   alias upgrade="sudo apt-get update && sudo apt-get dist-upgrade -y"
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
@@ -98,7 +98,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   if [ -f  /usr/local/bin/croutonwebsocket ]; then
     # Do chromeOS things
     if ! pidof -x "croutonwebsocket" >/dev/null; then
-      croutonwebsocket &
+      daemonize /usr/local/bin/croutonwebsocket
     fi
     export BROWSER="croutonurlhandler"
     # hack until I can figure out the clipboard
