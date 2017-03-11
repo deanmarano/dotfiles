@@ -109,7 +109,7 @@ nnoremap <Leader>gg :GitGrep<Space>
 " Write plain text. Nice for READMEs and other plain text.
 nnoremap <Leader>wt :set wrap<cr>:set formatoptions=t<cr>:set tw=80<cr>:LiteDFMToggle<cr>:setlocal spell spelllang=en_us<cr>
 
-nnoremap <Leader>uwt :set formatoptions=<cr>:set tw=0<cr>:LiteDFMToggle<cr>setlocal spell spelllang=<cr>
+nnoremap <Leader>uwt :set formatoptions=<cr>:set tw=0<cr>:LiteDFMToggle<cr>:setlocal spell spelllang=<cr>
 
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
 :set showtabline=2
