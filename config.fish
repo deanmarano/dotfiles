@@ -28,7 +28,7 @@ function nvm
 end
 
 function words
-  vim ~/Dropbox/Documents/journal/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
+  vim ~/Dropbox/writing/journal/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
 end
 
 function links

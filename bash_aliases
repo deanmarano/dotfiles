@@ -10,7 +10,7 @@ alias localnet="nmap -sn 192.168.1.0/24 -oG - | awk '/Up$/{print $2}'"
 cdp() { cd ~/project/; if [ $# -eq 1 ]; then cd $1; fi };
 cddm() { cd ~/github/deanmarano/; if [ $# -eq 1 ]; then cd $1; fi };
 cdg() { cd ~/github/; if [ $# -eq 1 ]; then cd $1; fi };
-alias words="vi ~/Dropbox/Documents/750Words/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'"
+alias words="vi ~/Dropbox/writing/journal/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'"
 alias links="vi ~/Dropbox/Documents/links/`date +%Y.%m.%d`.md -c ':AutoSaveToggle'"
 
 alias du="du -h --max-depth=1 ."
