@@ -14,6 +14,9 @@ function free-space
   brew cleanup
   rm -rf ~/Downloads/tmp/*
   rm -rf /tmp/*
+  rvm cleanup all
+  npm cache clear
+  yarn cache clean
 end
 
 function localnet
