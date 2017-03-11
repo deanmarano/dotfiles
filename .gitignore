@@ -3,3 +3,4 @@
 .DS_Store
 .*~
 .vim/bundle
+bin/tor-browser_en-US/*
