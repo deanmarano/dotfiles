@@ -42,7 +42,7 @@ set wildignore+=*/.bundle/*,*/.sass-cache/*
 set wildignore+=*/node_modules/*
 
 " Disable temp and backup files
-set wildignore+=*/tmp/*,*.swp,*~,._*
+set wildignore+=*/tmp/*,*.swp,*~,._*,*/dist/*
 
 " Disable Jekyll Site
 set wildignore+=*/_site/*

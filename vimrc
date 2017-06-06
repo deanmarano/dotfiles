@@ -172,7 +172,7 @@ set encoding=utf-8
 
 " Python
 " http://stackoverflow.com/questions/5601749/how-to-filter-out-files-by-extension-in-nerdtree
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$','dist']
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
