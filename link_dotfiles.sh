@@ -19,6 +19,7 @@ fi
 
 mkdir -p ~/.cache/swap/{backup,undo,swap}
 mkdir -p ~/{bin,.config,.ssh}
+mkdir -p ~/.config/fish
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
@@ -28,4 +29,6 @@ ln -s ~/dotfiles/.vim ~/.nvim
 ln -s ~/dotfiles/vimrc ~/.nvim/init.vim
 ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/ssh.config ~/.ssh/config
+ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish
+ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
