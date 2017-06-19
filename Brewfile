@@ -1,5 +1,4 @@
 ack
-alpine
 autossh
 brew-cask-completion
 chromedriver
@@ -31,16 +30,14 @@ libtasn1
 libtiff
 libtool
 libyaml
-mit-scheme
 mpfr
 msgpack
 ncurses
-neovim
+neovim/neovim/neovim
 nspr
 oniguruma
 openssh
 openssl
-openssl-osx-ca
 pcre
 phantomjs192
 pixman
