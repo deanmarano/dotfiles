@@ -1,6 +1,7 @@
 set shell=bash                " set default shell
 set nocompatible              " be iMproved, required
 filetype off                  " required
+set clipboard=unnamed
 
 """
 """ Vundle
