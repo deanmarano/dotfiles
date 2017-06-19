@@ -3,6 +3,7 @@
 [user]
   email = dean.marano@gmail.com
   name = Dean Marano
+  useconfigonly = true
 [core]
   editor = vim
   autocrlf = input
@@ -19,6 +20,11 @@
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   sha = rev-parse HEAD
   merged=!"git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git remote prune origin"
+
+  # Bitbucket
+  bucket = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|ssh://git@\\(.*\\):\\(.*\\).git|http://\\1/\\2|\" | sed -e \"s|\\/7999\\/\\([a-z-]*\\)\\/\\([a-z-]*\\)|:7990/projects/\\1/repos/\\2|\")/\""
+
+  # Github
   hub = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
   pulls = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pulls\""
   pr = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
