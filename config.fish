@@ -1,6 +1,7 @@
 set fish_greeting ""
-
 fundle plugin 'edc/bass'
+fundle plugin 'oh-my-fish/plugin-node-binpath'
+fundle plugin 'fisherman/fnm'
 fundle init
 
 alias vi="vim"
