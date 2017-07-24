@@ -89,6 +89,7 @@ let NERDTreeMinimalUI=1
 "autoclose NERDTree if it's the last thing left
 "https://github.com/scrooloose/nerdtree/issues/21
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeWinSize = 40
 
 " Moving lines and selections with Ctrl-J and K
 nnoremap <C-k> :m-2<CR>==
