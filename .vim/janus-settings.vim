@@ -35,6 +35,9 @@ set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
 " Disable archive files
 set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
+" Disable javascript sourcemap files
+set wildignore+=*.js.map
+
 " Ignore bundler and sass cache
 set wildignore+=*/.bundle/*,*/.sass-cache/*
 
@@ -42,7 +45,7 @@ set wildignore+=*/.bundle/*,*/.sass-cache/*
 set wildignore+=*/node_modules/*
 
 " Disable temp and backup files
-set wildignore+=*/tmp/*,*.swp,*~,._*,*/dist/*
+set wildignore+=*/tmp/*,*.swp,*~,._*,*/dist/*,*/coverage/*
 
 " Disable Jekyll Site
 set wildignore+=*/_site/*
