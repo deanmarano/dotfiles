@@ -35,3 +35,7 @@ end
 function links
   vim ~/Dropbox/Documents/links/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
 end
+
+function gprom
+  git pull --rebase origin master
+end
