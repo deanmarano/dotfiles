@@ -205,3 +205,6 @@ if has('gui_running')
   colorscheme solarized
   set guioptions=egmrt
 endif
+
+" https://github.com/tmux-plugins/vim-tmux-focus-events
+set autoread
