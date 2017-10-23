@@ -30,5 +30,6 @@ ln -s ~/dotfiles/vimrc ~/.nvim/init.vim
 ln -s ~/dotfiles/.gemrc ~/.gemrc
 ln -s ~/dotfiles/ssh.config ~/.ssh/config
 ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish
+ln -s ~/dotfiles/fishfile ~/.config/fish/fishfile
 ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 ln -s ~/dotfiles/.npmrc ~/.npmrc

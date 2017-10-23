@@ -5,7 +5,7 @@
 
 # install deps
 sudo apt-get update
-sudo apt-get install -y git vim tmux
+sudo apt-get install -y git vim tmux fish
 
 # setup ssh login
 # sudo su dean
@@ -19,3 +19,6 @@ dotfiles/link_dotfiles.sh
 # setup vim/vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+
+# Setup fish/fisherman
+curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher

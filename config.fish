@@ -1,8 +1,5 @@
 set fish_greeting ""
-fundle plugin 'edc/bass'
-fundle plugin 'oh-my-fish/plugin-node-binpath'
-fundle plugin 'fisherman/fnm'
-fundle init
+set MC_SKIN $HOME/.mc/solarized.ini
 
 alias vi="vim"
 
@@ -25,7 +22,7 @@ function localnet
 end
 
 function nvm
-  bass source ~/.linuxbrew/opt/nvm/nvm.sh --no-use ';' nvm $argv
+  fnm $argv
 end
 
 function words
