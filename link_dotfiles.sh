@@ -23,13 +23,18 @@ mkdir -p ~/.config/fish
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles/ssh.config ~/.ssh/config
+ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/.npmrc ~/.npmrc
+
+
+# Vim
 ln -s ~/dotfiles/vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vim ~/.nvim
 ln -s ~/dotfiles/vimrc ~/.nvim/init.vim
-ln -s ~/dotfiles/.gemrc ~/.gemrc
-ln -s ~/dotfiles/ssh.config ~/.ssh/config
+
+# Fish
 ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/fishfile ~/.config/fish/fishfile
 ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
-ln -s ~/dotfiles/.npmrc ~/.npmrc
