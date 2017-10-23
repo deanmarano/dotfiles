@@ -22,3 +22,6 @@ vim +PluginInstall +qall
 
 # Setup fish/fisherman
 curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+
+# Setup tmux/tpm
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
