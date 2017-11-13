@@ -1,7 +1,16 @@
-export PATH="$HOME/bin:/usr/local/heroku/bin:/usr/local/lib/node_modules:/usr/X11/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export LC_ALL=en_US.UTF-8
-export JAVA_HOME=/usr/bin/java
+PATH=$PATH:node_modules/.bin # add any node binaries to path
+PATH=$PATH:$HOME/.yarn/bin
+PATH=$PATH:$HOME/bin
+PATH=$PATH:/usr/local/heroku/bin
+PATH=$PATH:/usr/local/lib/node_modules
+PATH=$PATH:/usr/X11/bin
+PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:/usr/local/bin
+
+ulimit -n 4096
+>>>>>>> origin/master
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
@@ -22,6 +31,8 @@ export NODE_PATH="/usr/local/lib/node/bin"
 
 if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home ]; then
   export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
+else
+  export JAVA_HOME=/usr/bin/java
 fi
 
 HISTCONTROL=erasedups
