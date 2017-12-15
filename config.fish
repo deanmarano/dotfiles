@@ -36,3 +36,16 @@ end
 function gprom
   git pull --rebase origin master
 end
+
+function ...
+  ../..
+end
+
+function public-ip
+  curl icanhazip.com
+end
+
+function ip
+  ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
+end
+
