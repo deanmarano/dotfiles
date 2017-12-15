@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 require 'fileutils'
+require 'os'
+
+if OS.mac?
+  p `/usr/bin/open #{ARGV[0]}`
+  exit
+end
 
 if ARGV.length != 1
   puts 'open requires one argument'
