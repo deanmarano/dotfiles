@@ -1,2 +1,3 @@
 bind C-c run "tmux save-buffer - | xclip -selection C"
-set -g default-terminal "screen-256color"
+set -g default-terminal "xterm-256color"
+set -g default-shell ~/.linuxbrew/bin/fish
