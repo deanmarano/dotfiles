@@ -190,21 +190,11 @@ au VimResized * exe "normal! \<c-w>="
 set background=light
 
 colorscheme solarized
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
 
 " Always show the status line
 set laststatus=2
-
-" MacVim visual settings
-if has('gui_running')
-  syntax enable
-  set guifont=Monaco:h15
-
-  let g:solarized_termtrans=1
-  let g:solarized_termcolors=256
-
-  colorscheme solarized
-  set guioptions=egmrt
-endif
 
 " https://github.com/tmux-plugins/vim-tmux-focus-events
 set autoread
