@@ -20,6 +20,7 @@ fi
 mkdir -p ~/.cache/swap/{backup,undo,swap}
 mkdir -p ~/{bin,.config,.ssh}
 mkdir -p ~/.config/fish
+mkdir -p ~/.config/fish/functions
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
