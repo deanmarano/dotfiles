@@ -116,10 +116,3 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
     alias xclip="croutonurlhandler"
   fi
 fi
-
-# Load nvm
-
-if hash brew 2>/dev/null; then
-. "$(brew --prefix nvm)/nvm.sh"
-fi
-
