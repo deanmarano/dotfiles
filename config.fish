@@ -1,6 +1,11 @@
 set fish_greeting ""
 set MC_SKIN $HOME/.mc/solarized.ini
 
+if test asdf
+  source (brew --cellar asdf)/(brew --cellar asdf | xargs ls | head -n 1)/asdf.fish
+end
+
+
 alias vi="vim"
 
 function cddm
@@ -48,4 +53,3 @@ end
 function ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
-
