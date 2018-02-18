@@ -2,8 +2,8 @@
 
 @font-face {
     font-family: 'SauceCodePro Nerd Font';
-    src: url('SauceCodeProNerdFontC-Regular.woff2') format('woff2'),
-        url('SauceCodeProNerdFontC-Regular.woff') format('woff');
+    src: url('../fonts/SauceCodeProNerdFontC-Regular.woff2') format('woff2'),
+        url('../fonts/SauceCodeProNerdFontC-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
