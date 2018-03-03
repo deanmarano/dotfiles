@@ -108,9 +108,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 
   if [ -f  /usr/local/bin/croutonwebsocket ]; then
     # Do chromeOS things
-    if ! pidof -x "croutonwebsocket" >/dev/null; then
-      daemonize /usr/local/bin/croutonwebsocket
-    fi
+    # if ! pidof -x "croutonwebsocket" >/dev/null; then
+    #   daemonize /usr/local/bin/croutonwebsocket
+    # fi
     export BROWSER="croutonurlhandler"
     # hack until I can figure out the clipboard
     alias xclip="croutonurlhandler"

@@ -1,13 +1,13 @@
 # Backup existing files if they exist
-mkdir -p ~/.original-dotfiles
-mv ~/.tmux.conf ~/.original-dotfiles/.tmux.conf 2> /dev/null
-mv ~/.vimrc ~/.original-dotfiles/.vimrc 2> /dev/null
-mv ~/.vim ~/.original-dotfiles/.vim 2> /dev/null
-mv ~/.nvim ~/.original-dotfiles/.nvim 2> /dev/null
-mv ~/.nvimrc ~/.original-dotfiles/.vimrc 2> /dev/null
-mv ~/.gitconfig ~/.original-dotfiles/.gitconfig 2> /dev/null
-mv ~/.bashrc ~/.original-dotfiles/.bashrc 2> /dev/null
-mv ~/.gemrc ~/.original-dotfiles/.gemrc 2> /dev/null
+mkdir -p /tmp/original-dotfiles
+mv ~/.tmux.conf /tmp/original-dotfiles/.tmux.conf 2> /dev/null
+mv ~/.vimrc /tmp/original-dotfiles/.vimrc 2> /dev/null
+mv ~/.vim /tmp/original-dotfiles/.vim 2> /dev/null
+mv ~/.nvim /tmp/original-dotfiles/.nvim 2> /dev/null
+mv ~/.nvimrc /tmp/original-dotfiles/.vimrc 2> /dev/null
+mv ~/.gitconfig /tmp/original-dotfiles/.gitconfig 2> /dev/null
+mv ~/.bashrc /tmp/original-dotfiles/.bashrc 2> /dev/null
+mv ~/.gemrc /tmp/original-dotfiles/.gemrc 2> /dev/null
 
 
 # Git config is slightly different based on OS
@@ -30,10 +30,9 @@ ln -s ~/dotfiles/.npmrc ~/.npmrc
 
 
 # Vim
-ln -s ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.vim ~/.nvim
-ln -s ~/dotfiles/vimrc ~/.nvim/init.vim
 
 # Fish
 ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish

@@ -5,7 +5,7 @@
 
 # install deps
 sudo apt-get update
-sudo apt-get install -y git vim tmux fish
+# sudo apt-get install -y git vim tmux fish
 
 # setup ssh login
 # sudo su dean
