@@ -168,7 +168,12 @@ nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg
 
 " highlight UTF-8 Line ending characters
 if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-  let &listchars = "tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+  let &listchars = "tab:\u21e5 ,trail:·,precedes:«,extends:»,nbsp:\u00b7"
+  "set listchars=tab:→\ ,trail:·,precedes:«,extends:»,eol:¶
+  "set listchars=tab:→\ ,trail:␣,extends:…,eol:⏎
+  "set listchars=tab:‣\ ,trail:·,precedes:«,extends:»,eol:¬
+  "set listchars=tab:>-,trail:.,precedes:<,extends:>,eol:$
+
 endif
 set encoding=utf-8
 
@@ -198,3 +203,5 @@ set laststatus=2
 
 " https://github.com/tmux-plugins/vim-tmux-focus-events
 set autoread
+
+autocmd FileType nerdtree setlocal nolist
