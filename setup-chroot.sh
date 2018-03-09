@@ -1,7 +1,13 @@
 # outside of chroot
+# install chromebrew (crew)
+curl -Ls git.io/vddgY | bash
+
+# setup custom fonts
 sudo mkdir -p /usr/local/share/fonts
-
-
+sudo wget -P /usr/local/share/fonts https://rawgit.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
+mkdir -p /tmp/test/
+sudo mount --bind /home/chronos/ /tmp/test/
+cd /tmp/test/user
 cat > .fonts.conf << FONTS
 <?xml version="1.0"?>
 <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
@@ -9,12 +15,14 @@ cat > .fonts.conf << FONTS
         <dir>/usr/local/share/fonts</dir>
 </fontconfig>
 FONTS
-cd /usr/local/share/fonts
 
-sudo wget https://rawgit.com/ryanoasis/nerd-fonts/master/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono.ttf
 
 echo "sudo hostname pixelbook" >> .bashrc
 echo "sudo enter-chroot" >> .bashrc
+
+# reboot
+
+# create chroot
 
 # in chroot
 echo "127.0.0.1 pixelbook" > /etc/hosts
