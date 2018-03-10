@@ -28,7 +28,7 @@ echo "sudo enter-chroot" >> .bashrc
 echo "127.0.0.1 pixelbook" > /etc/hosts
 
 sudo apt update
-sudo apt install build-essential curl file git python-setuptools git tree htop openssh-server
+sudo apt install build-essential curl file git python-setuptools git tree htop openssh-server lsyncd
 
 git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew
 /home/dean/.linuxbrew/bin/brew install tmux vim git fish asdf
@@ -46,3 +46,12 @@ sudo apt-get update
 
 # 4. Install Spotify
 sudo apt-get install spotify-client
+
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf & sudo sysctl -p
+
+# setup lsync backup
+sudo ln /home/dean/.ssh/config /root/.ssh/
+sudo ssh-keygen
+sudo ssh-copy-id dean@fusion
+sudo mkdir -p /etc/lsyncd/
+sudo ln lsyncd.conf.lua /etc/lsyncd/
