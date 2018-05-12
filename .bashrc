@@ -76,8 +76,6 @@ PS1='\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 source ~/dotfiles/bash_aliases
 
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
-  export EDITOR="/usr/local/bin/nvim"
-  alias vi="/usr/local/bin/nvim"
   ulimit -n 4096
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
