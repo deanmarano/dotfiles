@@ -6,7 +6,6 @@ if test asdf
 end
 
 
-alias vi="vim"
 
 function cddm
   cd ~/github/deanmarano/
@@ -53,3 +52,12 @@ end
 function ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
+
+# https://github.com/gsamokovarov/.files/blob/master/.config/fish/aliases.fish
+abbr -a be bundle exec
+abbr mkdir "mkdir -p"
+abbr -a vi vim
+abbr -a migrate bin/rake db:migrate
+
+status --is-interactive; and source (rbenv init -|psub)
+
