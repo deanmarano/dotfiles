@@ -1,11 +1,11 @@
 " Run the current spec with rspec
-map <Leader>rb :call VimuxRunCommand("clear; rspec " . bufname("%"))<CR>
+map <Leader>rb :call VimuxRunCommand("clear; bin/rspec " . bufname("%"))<CR>
 
 " Run the current spec with zeus rspec
 map <Leader>rz :call VimuxRunCommand("clear; zeus rspec " . bufname("%"))<CR>
 
 " Run the current line with rspec
-map <Leader>rt :call VimuxRunCommand("clear; rspec " . bufname("%") . ':' .  line('.'))<CR>
+map <Leader>rt :call VimuxRunCommand("clear; bin/rspec " . bufname("%") . ':' .  line('.'))<CR>
 
 " Run the current feature with cucumber
 map <Leader>rc :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
