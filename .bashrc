@@ -13,14 +13,12 @@ ulimit -n 4096
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
+eval "$(rbenv init -)"
 export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
-
-# Java
-export JBOSS_HOME=~/.immutant/current/jboss
 
 # Docker
 export DOCKER_HOST=tcp://127.0.0.1:4243
@@ -28,12 +26,7 @@ export DOCKER_HOST=tcp://127.0.0.1:4243
 # Node
 export NODE_PATH="/usr/local/lib/node/bin"
 
-if [ -f  /System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home ]; then
-  export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands/java_home`
-else
-  export JAVA_HOME=/usr/bin/java
-fi
-
+# Bash
 HISTCONTROL=erasedups
 
 # append to the history file, don't overwrite it
