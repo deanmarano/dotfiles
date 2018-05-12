@@ -1,4 +1,1 @@
-# Fix clipboard access in OS X (requires `brew install reattach-to-user-namespace`)
 set-option -g default-command "reattach-to-user-namespace -l fish"
-bind C-c run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
-bind C-v run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
