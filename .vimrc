@@ -205,3 +205,5 @@ set laststatus=2
 set autoread
 
 autocmd FileType nerdtree setlocal nolist
+
+set fillchars+=vert:\│
