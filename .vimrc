@@ -65,6 +65,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>eh :e /etc/hosts<cr>
 :nnoremap <leader>et :e ~/.tmux.conf<cr>
 :nnoremap <leader>ef :e ~/dotfiles/config.fish<cr>
+:nnoremap <leader>eg :e ~/dotfiles/.gitconfig<cr>
 
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
