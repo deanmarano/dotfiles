@@ -38,3 +38,6 @@ ln -s ~/dotfiles/.vim ~/.nvim
 ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/fishfile ~/.config/fish/fishfile
 ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+
+# Emacs
+ln -s ~/dotfiles/.emacs ~/.emacs
