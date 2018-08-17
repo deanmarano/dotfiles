@@ -38,5 +38,6 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'wakatime/vim-wakatime'
 Plugin 'wavded/vim-stylus'
 Plugin 'wincent/terminus'
+Plugin 'yssl/QFEnter'
 
 Plugin 'ryanoasis/vim-devicons'
