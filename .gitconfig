@@ -21,6 +21,8 @@
   sha = rev-parse HEAD
   fpush = push --force-with-lease
   merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | xargs -n 1 git branch -d && git remote prune origin"
+  st = status
+  co = checkout
 
   # Bitbucket
   bucket = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|ssh://git@\\(.*\\):\\(.*\\).git|http://\\1/\\2|\" | sed -e \"s|\\/7999\\/\\([a-z-]*\\)\\/\\([a-z-]*\\)|:7990/projects/\\1/repos/\\2|\")/\""
