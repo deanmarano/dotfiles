@@ -5,8 +5,6 @@ if test asdf
   source (brew --cellar asdf)/(brew --cellar asdf | xargs ls | head -n 1)/asdf.fish
 end
 
-
-
 function cddm
   cd ~/github/deanmarano/
 end
