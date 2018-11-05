@@ -1,10 +1,6 @@
 set fish_greeting ""
 set MC_SKIN $HOME/.mc/solarized.ini
 
-if test asdf
-  source (brew --cellar asdf)/(brew --cellar asdf | xargs ls | head -n 1)/asdf.fish
-end
-
 function cddm
   cd ~/github/deanmarano/
 end
@@ -57,8 +53,6 @@ abbr mkdir "mkdir -p"
 abbr -a vi vim
 abbr -a migrate bin/rake db:migrate
 
-status --is-interactive; and source (rbenv init -|psub)
-
 # https://github.com/fish-shell/fish-shell/issues/1363
 function nohist
     set -l prefix $HOME/.config
@@ -74,4 +68,12 @@ function nohist
         cp -f $prefix/$path $prefix/$path.copy
         echo y | history --clear > /dev/null
     end
+end
+
+# Auto-install asdf from source
+if test asdf
+  source ~/.asdf/asdf.fish
+else
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+  source ~/.asdf/asdf.fish
 end
