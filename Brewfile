@@ -2,8 +2,11 @@ ack
 asdf
 autossh
 brew-cask-completion
+fish
+fzf
 getmail
 git
+gnupg
 graphviz
 imagemagick
 jq
@@ -14,5 +17,6 @@ sshfs
 tmux
 tree
 unzip
+watchman
 wget
 youtube-dl
