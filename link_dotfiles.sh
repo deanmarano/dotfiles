@@ -16,6 +16,7 @@ if [ "$(expr $(uname -s))" == "Darwin" ]; then
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   ln -s ~/dotfiles/ubuntu.gitconfig ~/.gitconfig
 fi
+ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 
 mkdir -p ~/.cache/swap/{backup,undo,swap}
 mkdir -p ~/{bin,.config,.ssh}
