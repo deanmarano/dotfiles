@@ -5,7 +5,7 @@
 
 # install deps
 sudo apt-get update
-# sudo apt-get install -y git vim tmux fish
+# sudo apt-get install -y git vim tmux fish build-essential autoconf python man-db coreutils libncurses5-dev
 
 # setup ssh login
 # sudo su dean
