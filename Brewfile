@@ -1,5 +1,4 @@
 ack
-asdf
 autossh
 brew-cask-completion
 fish
