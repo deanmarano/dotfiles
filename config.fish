@@ -31,6 +31,10 @@ function gprom
   git pull --rebase origin master
 end
 
+function gprot
+  git pull --rebase origin trunk
+end
+
 function ...
   ../..
 end
