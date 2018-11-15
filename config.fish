@@ -1,10 +1,6 @@
 set fish_greeting ""
 set MC_SKIN $HOME/.mc/solarized.ini
 
-function cddm
-  cd ~/github/deanmarano/
-end
-
 function free-space
   sudo apt-get autoremove
   brew cleanup
@@ -50,6 +46,8 @@ end
 # https://github.com/gsamokovarov/.files/blob/master/.config/fish/aliases.fish
 abbr -a be bundle exec
 abbr mkdir "mkdir -p"
+
+abbr cddm "cd ~/github/deanmarano/"
 abbr -a vi vim
 abbr -a migrate bin/rake db:migrate
 
