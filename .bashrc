@@ -13,7 +13,6 @@ ulimit -n 4096
 
 # Ruby
 if [[ -s "$HOME/.rvm/scripts/rvm" ]] ; then source "$HOME/.rvm/scripts/rvm" ; fi
-eval "$(rbenv init -)"
 export RUBY_HEAP_MIN_SLOTS=500000
 export RUBY_GC_HEAP_INIT_SLOTS=500000
 export RUBY_HEAP_SLOTS_INCREMENT=250000
