@@ -1,7 +1,9 @@
 set shell=bash                " set default shell
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set clipboard=unnamed
+set clipboard=unnamed " copy to the system clipboard
+
+set autoread
 
 """
 """ Vundle
@@ -26,7 +28,7 @@ source ~/.vim/janus-settings.vim
 source ~/.vim/carls-git-grep.vim
 
 """
-""" OS Specific clipboard settings
+""" OS Specific settings
 """
 
 if has("unix")
@@ -55,6 +57,8 @@ let g:ctrlp_max_files = 20000
 
 " set max height of CtrlP results
 let g:ctrlp_match_window = 'max:20'
+
+set rtp+=/usr/local/opt/fzf
 
 " expand %% to current directory - from Kevin B., from DAS
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
