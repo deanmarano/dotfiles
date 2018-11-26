@@ -35,6 +35,10 @@ function gprot
   git pull --rebase origin trunk
 end
 
+function gprod
+  git pull --rebase origin develop
+end
+
 function ...
   ../..
 end
