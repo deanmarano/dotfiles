@@ -75,6 +75,10 @@ source ~/dotfiles/bash_aliases
 
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   ulimit -n 4096
+  alias vi="/usr/local/bin/vim"
+  export EDITOR="usr/local/bin/vim"
+
+  export PATH="/usr/local/sbin:$PATH"
 
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under Linux platform
