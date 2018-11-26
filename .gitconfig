@@ -20,7 +20,7 @@
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   sha = rev-parse HEAD
   fpush = push --force-with-lease
-  merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | xargs -n 1 git branch -d && git remote prune origin"
+  merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | grep -v \"develop\" | xargs -n 1 git branch -d && git remote prune origin"
   st = status
   co = checkout
 
