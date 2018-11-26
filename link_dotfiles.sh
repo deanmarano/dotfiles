@@ -42,3 +42,5 @@ ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
 ln -s ~/dotfiles/.asdfrc ~/.asdfrc
 ln -s ~/dotfiles/.emacs ~/.emacs
+ln -s ~/dotfiles/.spacemacs ~/.spacemacs
+ln -s ~/dotfiles/.emacs.d ~/.emacs.d
