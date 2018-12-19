@@ -12,6 +12,7 @@ jq
 openssh
 openssl
 rsync
+shpotify
 sshfs
 tmux
 tree
