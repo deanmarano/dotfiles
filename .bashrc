@@ -76,7 +76,7 @@ source ~/dotfiles/bash_aliases
 if [ "$(expr $(uname -s))" == "Darwin" ]; then
   ulimit -n 4096
   alias vi="/usr/local/bin/vim"
-  export EDITOR="usr/local/bin/vim"
+  export EDITOR="/usr/local/bin/vim"
 
   export PATH="/usr/local/sbin:$PATH"
 
