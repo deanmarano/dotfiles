@@ -43,22 +43,26 @@ endif
 " Geoff's hashrocket
 imap <silent> <C-l> <Space>=><Space>
 
-"Allow Control P to fire the CtrlP plugin (doesn't by default?)
-:nmap <C-p> :CtrlP<CR>
-:map <leader>ls :CtrlPBuffer<cr>
 :nmap <C-T> :tabnew<CR>
+
+" Allow Control P to fire the CtrlP plugin (doesn't by default?)
 map ,f <C-p>
+if executable('fzf')
+  :nmap <C-p> :GFiles<CR>
+  :map <leader>ls :Buffers<cr>
+  set rtp+=/usr/local/opt/fzf
+else
+  :nmap <C-p> :CtrlP<CR>
+  :map <leader>ls :CtrlPBuffer<cr>
+  " Let CtrlP cache hang around on exit - useful for very large projects
+  let g:ctrlp_clear_cache_on_exit = 0
 
-" Let CtrlP cache hang around on exit - useful for very large projects
-let g:ctrlp_clear_cache_on_exit = 0
+  " set max files for CtrlP to scan https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
+  let g:ctrlp_max_files = 20000
 
-" set max files for CtrlP to scan https://github.com/kien/ctrlp.vim/blob/master/doc/ctrlp.txt
-let g:ctrlp_max_files = 20000
-
-" set max height of CtrlP results
-let g:ctrlp_match_window = 'max:20'
-
-set rtp+=/usr/local/opt/fzf
+  " set max height of CtrlP results
+  let g:ctrlp_match_window = 'max:20'
+endif
 
 " expand %% to current directory - from Kevin B., from DAS
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
