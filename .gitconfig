@@ -23,7 +23,7 @@
   merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | grep -v \"develop\" | xargs -n 1 git branch -d && git remote prune origin"
   st = status
   co = checkout
-  set-upstream=!"git branch | grep \"*\" | sed \"s/* //\" | awk '{print \"origin/\"$1}' | xargs git branch --set-upstream-to"
+  set-upstream=!"git branch | grep \"*\" | sed \"s/* //\" | awk '{print \"origin/\"$1}' | xargs git branch --set-upstream-to && git pull"
 
   # Bitbucket
   bucket = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|ssh://git@\\(.*\\):\\(.*\\).git|http://\\1/\\2|\" | sed -e \"s|\\/7999\\/\\([a-z-]*\\)\\/\\([a-z-]*\\)|:7990/projects/\\1/repos/\\2|\")/\""
