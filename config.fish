@@ -47,7 +47,7 @@ function public-ip
   curl icanhazip.com
 end
 
-function ip
+function my-ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
 
@@ -57,7 +57,7 @@ abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
 abbr -a vi vim
-abbr -a migrate bin/rake db:migrate
+abbr -a migrate bundle exec rake db:migrate
 
 # https://github.com/fish-shell/fish-shell/issues/1363
 function nohist
