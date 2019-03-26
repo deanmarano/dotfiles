@@ -20,7 +20,7 @@ function nvm
 end
 
 function words
-  vim ~/Dropbox/writing/journal/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
+  vim ~/Dropbox/writing/journal/(date +%Y.%m.%d).md -c 'execute ":Goyo" | :AutoSaveToggle'
 end
 
 function links
