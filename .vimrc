@@ -118,9 +118,9 @@ nnoremap <Leader>fc :GitGrep '<<<<<<<'<cr>
 nnoremap <Leader>gg :GitGrep<Space>
 
 " Write plain text. Nice for READMEs and other plain text.
-nnoremap <Leader>wt :set wrap<cr>:set formatoptions=t<cr>:set tw=80<cr>:LiteDFMToggle<cr>:setlocal spell spelllang=en_us<cr>
+nnoremap <Leader>wt :Goyo<cr>
 
-nnoremap <Leader>uwt :set formatoptions=<cr>:set tw=0<cr>:LiteDFMToggle<cr>:setlocal spell spelllang=<cr>
+nnoremap <Leader>uwt :Goyo<cr>
 
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
 :set showtabline=2
@@ -226,23 +226,26 @@ let g:markdown_fenced_languages = ['javascript']
 
 
 function! s:goyo_enter()
+
+  set wrap
+  set linebreak
   silent !tmux set status off
   silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   set noshowmode
   set noshowcmd
   set scrolloff=999
-  Limelight
-  " ...
+  setlocal spell spelllang=en_us
 endfunction
 
 function! s:goyo_leave()
   silent !tmux set status on
   silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+  set nowrap
+  set nolinebreak
   set showmode
   set showcmd
   set scrolloff=5
-  Limelight!
-  " ...
+  setlocal nospell
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
