@@ -26,6 +26,7 @@ filetype plugin on
 
 source ~/.vim/janus-settings.vim
 source ~/.vim/carls-git-grep.vim
+source ~/.vim/projectionist.vim
 
 """
 """ OS Specific settings
@@ -48,12 +49,13 @@ imap <silent> <C-l> <Space>=><Space>
 " Allow Control P to fire the CtrlP plugin (doesn't by default?)
 map ,f <C-p>
 if executable('fzf')
-  :nmap <C-p> :GFiles<CR>
-  :map <leader>ls :Buffers<cr>
+  :nmap <C-p> :GFiles -X .gitignore<CR>
+  :map <leader>ls :FZF<cr>
+  :map <leader>lb :Buffers<cr>
   set rtp+=/usr/local/opt/fzf
 else
   :nmap <C-p> :CtrlP<CR>
-  :map <leader>ls :CtrlPBuffer<cr>
+  :map <leader>lb :CtrlPBuffer<cr>
   " Let CtrlP cache hang around on exit - useful for very large projects
   let g:ctrlp_clear_cache_on_exit = 0
 
@@ -69,6 +71,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Commonly edited files
 :nnoremap <leader>ev :e $MYVIMRC<cr>
+:nnoremap <leader>ep :e ~/dotfiles/.vim/Vundlefile.vim<cr>
 :nnoremap <leader>eb :e ~/.bashrc<cr>
 :nnoremap <leader>eh :e /etc/hosts<cr>
 :nnoremap <leader>et :e ~/.tmux.conf<cr>
@@ -250,3 +253,7 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Set the tmux tab all pretty :)
+:autocmd FocusLost * !tmux setw automatic-rename
+:autocmd FocusGained * !tmux rename-window " $(basename $(pwd))"
