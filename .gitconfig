@@ -13,17 +13,13 @@
 [difftool]
   prompt = false
 [alias]
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  whip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
-  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
-  unwhip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
-  unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
-  sha = rev-parse HEAD
   fpush = push --force-with-lease
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | grep -v \"develop\" | xargs -n 1 git branch -d && git remote prune origin"
-  st = status
-  co = checkout
   set-upstream=!"git branch | grep \"*\" | sed \"s/* //\" | awk '{print \"origin/\"$1}' | xargs git branch --set-upstream-to && git pull"
+  sha = rev-parse HEAD
+  unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
+  wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
 
   # Bitbucket
   bucket = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|ssh://git@\\(.*\\):\\(.*\\).git|http://\\1/\\2|\" | sed -e \"s|\\/7999\\/\\([a-z-]*\\)\\/\\([a-z-]*\\)|:7990/projects/\\1/repos/\\2|\")/\""
