@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>UserName</key>
+    <string>dean</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+      <key>IDENTITY_FILE</key>
+      <string>/Users/dean/.ssh/id_rsa</string>
+    </dict>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <true/>
+    </dict>
+    <key>Label</key>
+    <string>com.deanoftech.fusion.ssh</string>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/autossh</string>
+      <string>-M</string>
+      <string>0</string>
+      <string>-L</string>
+      <string>3128:localhost:3128</string>
+      <string>-NR</string>
+      <string>2224:localhost:22</string>
+      <string>dean@fusion.deanoftech.com</string>
+      <string>-p</string>
+      <string>5720</string>
+      <string>-D</string>
+      <string>3334</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/autossh.out</string>
+    <key>StandardErrorPath</key>
+    <string>/tmp/autossh.err</string>
+  </dict>
+</plist>
