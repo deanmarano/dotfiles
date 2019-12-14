@@ -43,6 +43,16 @@ function ...
   ../..
 end
 
+function ud
+  pushd .
+  cd ..
+  popd
+end
+
+function pbedit
+  pbpaste | vipe | pbcopy
+end
+
 function public-ip
   curl icanhazip.com
 end
@@ -57,7 +67,8 @@ abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
 abbr -a vi vim
-abbr -a migrate bundle exec rake db:migrate
+
+abbr kaboom "rm -rf node_modules tmp dist; and yarn"
 
 # https://github.com/fish-shell/fish-shell/issues/1363
 function nohist
