@@ -18,9 +18,6 @@ export RUBY_HEAP_SLOTS_INCREMENT=250000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=50000000
 
-# Docker
-export DOCKER_HOST=tcp://127.0.0.1:4243
-
 # Node
 export NODE_PATH="/usr/local/lib/node/bin"
 
