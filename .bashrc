@@ -1,13 +1,14 @@
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export LC_ALL=en_US.UTF-8
-PATH=$PATH:node_modules/.bin # add any node binaries to path
-PATH=$PATH:$HOME/.yarn/bin
+#PATH=$PATH:node_modules/.bin # add any node binaries to path
+#PATH=$PATH:$HOME/.yarn/bin
 PATH=$PATH:$HOME/bin
-PATH=$PATH:/usr/local/heroku/bin
+#PATH=$PATH:/usr/local/heroku/bin
 PATH=$PATH:/usr/local/lib/node_modules
 PATH=$PATH:/usr/X11/bin
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/Cellar/postgresql@9.5/9.5.19_1/bin
 
 ulimit -n 4096
 

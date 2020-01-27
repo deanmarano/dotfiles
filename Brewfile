@@ -1,22 +1,72 @@
-ack
-autossh
-brew-cask-completion
-fish
-fzf
-getmail
-git
-gnupg
-graphviz
-imagemagick
-jq
-openssh
-openssl
-rsync
-shpotify
-sshfs
-tmux
-tree
-unzip
-watchman
-wget
-youtube-dl
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "homebrew/services"
+tap "trice-imaging/trice", "git@github.com:trice-imaging/homebrew-trice.git"
+brew "ack"
+brew "adns"
+brew "aspell"
+brew "autoconf"
+brew "automake"
+brew "autossh"
+brew "openssl"
+brew "readline"
+brew "awscli"
+brew "brew-cask-completion"
+brew "cmake"
+brew "coreutils"
+brew "elm"
+brew "gmp"
+brew "libevent"
+brew "libffi"
+brew "libtasn1"
+brew "emacs", restart_service: true
+brew "fd"
+brew "lame"
+brew "libogg"
+brew "ffmpeg"
+brew "pcre2"
+brew "fish"
+brew "libpng"
+brew "fontconfig"
+brew "fzf"
+brew "libtiff"
+brew "gd"
+brew "python@2"
+brew "gdcm"
+brew "getmail"
+brew "git"
+brew "pcre"
+brew "libassuan"
+brew "libgcrypt"
+brew "libksba"
+brew "libusb"
+brew "pinentry"
+brew "gnupg"
+brew "gnupg@1.4"
+brew "graphviz"
+brew "htop"
+brew "jq"
+brew "nmap"
+brew "tmux"
+brew "overmind"
+brew "reattach-to-user-namespace"
+brew "redis", restart_service: true
+brew "rsync"
+brew "shpotify"
+brew "sshfs"
+brew "tree"
+brew "unzip"
+brew "vim"
+brew "watchman"
+brew "weechat", args: ["with-aspell"]
+brew "wget"
+brew "youtube-dl"
+cask "dash"
+cask "discord"
+cask "electrum"
+cask "mactex"
+cask "signal"
+cask "tor-browser"
+cask "whoozle-android-file-transfer"

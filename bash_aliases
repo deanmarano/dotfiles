@@ -1,5 +1,6 @@
 # cli tools
 alias t="tmux attach -t `hostname` || tmux new -s `hostname`"
+alias tt="tmux attach -t trice || tmux new -s trice"
 alias gprom="git pull --rebase origin master"
 alias gprum="git pull --rebase upstream master"
 alias gprod="git pull --rebase origin dev"

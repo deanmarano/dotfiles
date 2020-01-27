@@ -24,7 +24,7 @@ function words
 end
 
 function links
-  vim ~/Dropbox/Documents/links/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
+  pbpaste >> ~/Dropbox/Documents/links/(date +%Y.%m.%d).md
 end
 
 function gprom
@@ -61,11 +61,16 @@ function my-ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
 
+function cryptonia
+  pbpaste | gpg --decrypt 2> /dev/null | grep "Login" | sed "s/Login Token: //" | pbcopy
+end
+
 # https://github.com/gsamokovarov/.files/blob/master/.config/fish/aliases.fish
 abbr -a be bundle exec
 abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
+abbr cdt "cd ~/github/trice-imaging/tricefy4"
 abbr -a vi vim
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
@@ -87,10 +92,12 @@ function nohist
     end
 end
 
-# Auto-install asdf from source
+#Auto-install asdf from source
 if test asdf
-  source ~/.asdf/asdf.fish
+ source ~/.asdf/asdf.fish
 else
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
-  source ~/.asdf/asdf.fish
+ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
+ source ~/.asdf/asdf.fish
 end
+
+thefuck --alias | source
