@@ -61,8 +61,8 @@ function my-ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
 
-function cryptonia
-  pbpaste | gpg --decrypt 2> /dev/null | grep "Login" | sed "s/Login Token: //" | pbcopy
+function cannahome
+  pbpaste | gpg --decrypt 2> /dev/null | grep "code is" | sed "s/Your authentication code is: //" | pbcopy
 end
 
 # https://github.com/gsamokovarov/.files/blob/master/.config/fish/aliases.fish
@@ -101,3 +101,4 @@ else
 end
 
 thefuck --alias | source
+set GITHUB_PAT (cat ~/trice.token)

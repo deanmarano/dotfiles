@@ -105,6 +105,5 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   fi
 fi
 
-#. $HOME/.asdf/asdf.sh
-
-#. $HOME/.asdf/completions/asdf.bash
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
