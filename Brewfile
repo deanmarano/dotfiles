@@ -27,4 +27,5 @@ cask "alfred"
 cask "spotify"
 cask "iterm2"
 cask "electrum"
+cask "bettertouchtool"
 
