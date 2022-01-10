@@ -1,22 +1,30 @@
-ack
-autossh
-brew-cask-completion
-fish
-fzf
-getmail
-git
-gnupg
-graphviz
-imagemagick
-jq
-openssh
-openssl
-rsync
-shpotify
-sshfs
-tmux
-tree
-unzip
-watchman
-wget
-youtube-dl
+brew "ack"
+brew "autossh"
+brew "brew-cask-completion"
+brew "fish"
+brew "fzf"
+brew "getmail"
+brew "git"
+brew "gnupg"
+brew "graphviz"
+brew "imagemagick"
+brew "jq"
+brew "openssh"
+brew "openssl"
+brew "rsync"
+brew "shpotify"
+brew "sshfs"
+brew "tmux"
+brew "tree"
+brew "unzip"
+brew "watchman"
+brew "wget"
+brew "youtube-dl"
+brew "reattach-to-user-namespace"
+
+cask "firefox"
+cask "alfred"
+cask "spotify"
+cask "iterm2"
+cask "electrum"
+
