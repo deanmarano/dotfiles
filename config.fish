@@ -24,7 +24,7 @@ function words
 end
 
 function links
-  pbpaste >> ~/Dropbox/Documents/links/(date +%Y.%m.%d).md
+  pbpaste >> ~/Nextcloud/Dropbox/Documents/links/(date +%Y.%m.%d).md
 end
 
 function gprom
@@ -71,9 +71,18 @@ abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
 abbr cdt "cd ~/github/trice-imaging/tricefy4"
+abbr cdf "cd ~/github/trice-imaging/frontend"
 abbr -a vi vim
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
+
+function git-cd
+  ~/bin/git-cd.rb $argv | source
+end
+
+function native-git-cd
+  ~/bin/git-cd.rb $argv | source
+end
 
 # https://github.com/fish-shell/fish-shell/issues/1363
 function nohist
@@ -96,9 +105,6 @@ end
 if test asdf
  source ~/.asdf/asdf.fish
 else
- git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.6
+ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
  source ~/.asdf/asdf.fish
 end
-
-thefuck --alias | source
-set GITHUB_PAT (cat ~/trice.token)

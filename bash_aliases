@@ -1,8 +1,8 @@
 # cli tools
 alias t="tmux attach -t `hostname` || tmux new -s `hostname`"
 alias tt="tmux attach -t trice || tmux new -s trice"
-alias gprom="git pull --rebase origin master"
-alias gprum="git pull --rebase upstream master"
+alias gprom="git pull --rebase origin main"
+alias gprum="git pull --rebase upstream main"
 alias gprod="git pull --rebase origin dev"
 alias git-merged="git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
 alias git-merged-remote="git branch -a --merged remotes/origin/master | grep -v master | grep "remotes/origin/" | cut -d "/" -f 3 | xargs -n 1 git push --delete origin; git remote prune origin"

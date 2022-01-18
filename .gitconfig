@@ -8,6 +8,7 @@
   editor = vim
   autocrlf = input
   excludesfile = ~/dotfiles/.gitignore_global
+  pager = delta
 [diff]
   tool = vimdiff
 [difftool]
@@ -15,21 +16,30 @@
 [alias]
   fpush = push --force-with-lease
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-  merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | grep -v \"develop\" | xargs -n 1 git branch -d && git remote prune origin"
-  set-upstream=!"git branch | grep \"*\" | sed \"s/* //\" | awk '{print \"origin/\"$1}' | xargs git branch --set-upstream-to && git pull"
   sha = rev-parse HEAD
+
+  fixup = !"~/bin/git-fixup.sh"
+  merged=!"git branch --merged | grep -v \"\\*\" | grep -v \"master\" | grep -v \"develop\" | xargs -n 1 git branch -d && git remote prune origin"
+  upstream=!"git branch | grep \"*\" | sed \"s/* //\" | awk '{print \"origin/\"$1}' | xargs git branch --set-upstream-to && git pull"
+  set-upstream= upstream
   unwip = !"git log -n 1 | grep -q -c WIP && git reset HEAD~1"
   wip = !"git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m \"WIP\""
+  empty-commit = commit --allow-empty -m 'Trigger build.'
 
   # Bitbucket
   bucket = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|ssh://git@\\(.*\\):\\(.*\\).git|http://\\1/\\2|\" | sed -e \"s|\\/7999\\/\\([a-z-]*\\)\\/\\([a-z-]*\\)|:7990/projects/\\1/repos/\\2|\")/\""
 
   # Github
   hub = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/\""
-  pulls = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pulls\""
   pr = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
+  pulls = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pulls\""
+
+  # Typos
+  psuh = push
 [branch]
   autosetuprebase = always
+[rebase]
+  autoStash = true
 [push]
   default = current
 [credential]
@@ -40,3 +50,13 @@
   required = true
 [fetch]
   prune = true
+
+[delta]
+  syntax-theme = Solarized (light)
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+  light = true
+
+[interactive]
+  diffFilter = delta --color-only --light

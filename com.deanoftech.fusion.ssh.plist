@@ -21,11 +21,11 @@
       <string>/usr/local/bin/autossh</string>
       <string>-M</string>
       <string>0</string>
+      <string>dean@fusion.deanoftech.com</string>
       <string>-L</string>
       <string>3128:localhost:3128</string>
       <string>-NR</string>
       <string>2224:localhost:22</string>
-      <string>dean@fusion.deanoftech.com</string>
       <string>-p</string>
       <string>5720</string>
       <string>-D</string>
