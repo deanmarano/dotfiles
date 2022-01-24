@@ -31,5 +31,6 @@ cask "spotify"
 cask "iterm2"
 cask "electrum"
 cask "bettertouchtool"
+cask "monitorcontrol"
 
 mas "amphetamine", id: 937984704
