@@ -107,3 +107,7 @@ fi
 #. $HOME/.asdf/asdf.sh
 
 #. $HOME/.asdf/completions/asdf.bash
+export GITHUB_TOKEN=$(cat ~/.hashicorp-loaner.token)
+export HOMEBREW_GITHUB_API_TOKEN="${GITHUB_TOKEN}"
+
+eval "$(tfcdev rc)"

@@ -35,6 +35,10 @@ function gprod
   git pull --rebase origin develop
 end
 
+function cdh
+  cd ~/github/hashicorp
+end
+
 function ...
   ../..
 end

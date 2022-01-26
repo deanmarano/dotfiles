@@ -1,7 +1,7 @@
 [color]
   ui = auto
 [user]
-  email = dean.marano@gmail.com
+	email = dean.marano@hashicorp.com
   name = Dean Marano
   useconfigonly = true
 [core]
