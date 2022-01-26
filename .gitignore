@@ -4,3 +4,4 @@
 .*~
 .vim/bundle
 bin/tor-browser_en-US/*
+Brewfile.lock.json
