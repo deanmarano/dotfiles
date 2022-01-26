@@ -8,6 +8,7 @@
   editor = vim
   autocrlf = input
   excludesfile = ~/dotfiles/.gitignore_global
+  pager = delta
 [diff]
   tool = vimdiff
 [difftool]
@@ -40,3 +41,15 @@
   required = true
 [fetch]
   prune = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
+[delta]
+  syntax-theme = Solarized (light)
+  navigate = true
+  line-numbers = true
+  side-by-side = true
+  light = true
+
+[interactive]
+  diffFilter = delta --color-only --light
