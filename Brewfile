@@ -29,10 +29,13 @@ brew "youtube-dl"
 
 cask "alfred"
 cask "bettertouchtool"
+cask "itsycal"
+cask "discord"
 cask "electrum"
 cask "firefox"
 cask "iterm2"
 cask "monitorcontrol"
 cask "spotify"
+cask "tor-browser"
 
 mas "amphetamine", id: 937984704
