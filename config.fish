@@ -15,10 +15,6 @@ function localnet
   nmap -sn 192.168.1.0/24 -oG - | awk '/Up$/{print $2}'
 end
 
-function nvm
-  fnm $argv
-end
-
 function words
   vim ~/Dropbox/writing/journal/(date +%Y.%m.%d).md -c 'execute ":Goyo" | :AutoSaveToggle'
 end
