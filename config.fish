@@ -24,7 +24,7 @@ function links
 end
 
 function gprom
-  git pull --rebase origin master
+  git pull --rebase origin main
 end
 
 function gprot
