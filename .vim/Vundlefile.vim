@@ -3,6 +3,7 @@ Plugin 'ElmCast/elm-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'benmills/vimux'
+Plugin 'bfontaine/Brewfile.vim'
 Plugin 'bilalq/lite-dfm'
 Plugin 'dag/vim-fish'
 Plugin 'danro/rename.vim'
@@ -57,6 +58,7 @@ Plugin 'yssl/QFEnter'
 
 if executable('fzf')
   Plugin 'junegunn/fzf.vim'
+  Plugin 'junegunn/fzf'
 else
   Plugin 'ctrlpvim/ctrlp.vim'
 endif
