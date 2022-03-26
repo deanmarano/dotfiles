@@ -42,5 +42,8 @@ cask "monitorcontrol"
 cask "slack"
 cask "spotify"
 cask "tor-browser"
+cask "transmission"
+cask "telegram"
+cask "vlc"
 
 mas "amphetamine", id: 937984704
