@@ -1,5 +1,5 @@
 set fish_greeting ""
-set MC_SKIN $HOME/.mc/solarized.ini
+set MC_SKIN $HOME/dotfiles/mc_solarized_light.ini
 
 function free-space
   sudo apt-get autoremove
