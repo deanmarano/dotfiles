@@ -25,3 +25,4 @@ If you're setting up a new computer:
   * Mac - install homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 * `cd; git clone https://github.com/deanmarano/dotfiles.git`
   * Use https until SSH key has been setup.
+* Run `~/dotfiles/setup.sh`
