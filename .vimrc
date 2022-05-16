@@ -83,9 +83,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
 
-nnoremap <Leader>z :LiteDFMToggle<CR>
-":silent !tmux set status > /dev/null 2>&1<CR>:redraw!<CR>
-
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
 
