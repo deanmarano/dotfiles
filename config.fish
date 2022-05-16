@@ -16,7 +16,7 @@ function localnet
 end
 
 function words
-  vim ~/Dropbox/writing/journal/(date +%Y.%m.%d).md -c 'execute ":Goyo" | :AutoSaveToggle'
+  vim ~/nextcloud/typing/journal/(date +%Y.%m.%d).md -c 'execute ":Goyo" | :AutoSaveToggle'
 end
 
 function links
