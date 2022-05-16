@@ -1,4 +1,5 @@
 Plugin 'AndrewRadev/ember_tools.vim'
+Plugin 'arthurxavierx/vim-caser'
 Plugin 'ElmCast/elm-vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
