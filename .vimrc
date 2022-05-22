@@ -175,7 +175,7 @@ set history=10000
 nnoremap <Leader>wc g<C-g>
 
 " Format JSON
-nnoremap <Leader>fj :%!python -m json.tool<cr>:%s/    /  /g<cr>:%s/\s\+$//<cr>gg
+nnoremap <Leader>fj :%!jq<cr>:set ft=json<cr>gg<cr>gg
 
 " highlight UTF-8 Line ending characters
 if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
