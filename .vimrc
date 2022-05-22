@@ -3,6 +3,8 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set clipboard=unnamed " copy to the system clipboard
 
+set hidden
+
 set autoread
 
 """
@@ -257,3 +259,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 :autocmd VimLeave * !tmux setw automatic-rename
 :autocmd FocusLost * !tmux setw automatic-rename
 :autocmd FocusGained * !tmux rename-window " $(basename $(pwd))"
+
+let g:dotoo#agenda#files=[expand('~/nextcloud/dotoo/*.dotoo')]
+let g:dotoo#capture#refile=expand('~/nextcloud/dotoo/refile.dotoo')
+"let g:dotoo#capture#clock = 0
