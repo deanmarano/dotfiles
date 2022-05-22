@@ -62,6 +62,7 @@ abbr -a be bundle exec
 abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
+abbr cdd "cd ~/dotfiles"
 abbr -a vi vim
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
