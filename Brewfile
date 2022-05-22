@@ -26,6 +26,7 @@ brew "tree"
 brew "unzip"
 brew "watchman"
 brew "wget"
+brew "vim"
 brew "youtube-dl"
 
 cask "alfred"
