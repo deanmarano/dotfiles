@@ -46,14 +46,13 @@ imap <silent> <C-l> <Space>=><Space>
 
 :nmap <C-T> :tabnew<CR>
 
-" Allow Control P to fire the CtrlP plugin (doesn't by default?)
-map ,f <C-p>
 if executable('fzf')
   :nmap <C-p> :GFiles -X .gitignore<CR>
   :map <leader>ls :FZF<cr>
   :map <leader>lb :Buffers<cr>
   set rtp+=/usr/local/opt/fzf
 else
+" Allow Control P to fire the CtrlP plugin (doesn't by default?)
   :nmap <C-p> :CtrlP<CR>
   :map <leader>lb :CtrlPBuffer<cr>
   " Let CtrlP cache hang around on exit - useful for very large projects
@@ -92,15 +91,13 @@ source ~/.vim/vimux.vim
 nm <Leader>/ <plug>NERDCommenterInvert
 vm <Leader>/ <plug>NERDCommenterInvert
 
+" NERDTree
 nnoremap <Leader>n :NERDTreeToggle<cr>
 nmap <Leader>f :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
-"autocmd VimEnter * :NERDTreeToggle
-"autocmd VimEnter * wincmd p
 "autoclose NERDTree if it's the last thing left
-"https://github.com/scrooloose/nerdtree/issues/21
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-let g:NERDTreeWinSize = 40
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeWinSize = 37
 
 " Moving lines and selections with Ctrl-J and K
 nnoremap <C-k> :m-2<CR>==
@@ -122,6 +119,8 @@ nnoremap <Leader>gg :GitGrep<Space>
 " Write plain text. Nice for READMEs and other plain text.
 nnoremap <Leader>wt :Goyo<cr>
 
+" Un-write plain text, these mappings are mostly for brain backwards
+" compatibility
 nnoremap <Leader>uwt :Goyo<cr>
 
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
@@ -224,11 +223,13 @@ let g:qfenter_keymap.vopen = ['<C-v>']
 let g:qfenter_keymap.hopen = ['<C-CR>', '<C-s>', '<C-x>']
 let g:qfenter_keymap.topen = ['<C-t>']
 
+" Prevent quickfix items from opening in nerdtree
+let g:qfenter_exclude_filetypes = ['nerdtree']
+
 let g:markdown_fenced_languages = ['javascript']
 
-
+" Hide tmux when using distraction-free mode
 function! s:goyo_enter()
-
   set wrap
   set linebreak
   silent !tmux set status off

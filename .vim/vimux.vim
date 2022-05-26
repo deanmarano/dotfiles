@@ -4,12 +4,6 @@ map <Leader>rb :call VimuxRunCommand("clear; bundle exec rspec " . bufname("%"))
 " Run the current line with rspec
 map <Leader>rt :call VimuxRunCommand("clear; bundle exec rspec " . bufname("%") . ':' .  line('.'))<CR>
 
-" Run the current feature with cucumber
-map <Leader>rc :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
-
-" Run the current feature with cucumber
-map <Leader>rf :call VimuxRunCommand("clear; cucumber " . bufname("%"))<CR>
-
 " Prompt for a command to run
 map <Leader>rp :VimuxPromptCommand<CR>
 
