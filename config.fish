@@ -16,7 +16,11 @@ function localnet
 end
 
 function words
-  vim ~/nextcloud/typing/journal/(date +%Y.%m.%d).md -c 'execute ":Goyo" | :AutoSaveToggle'
+  vim -c 'execute ":WikiJournal" | :Goyo'
+end
+
+function wiki
+  vim -c 'execute ":WikiIndex"'
 end
 
 function links
