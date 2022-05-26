@@ -73,6 +73,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>eV :e ~/dotfiles/.vim/Vundlefile.vim<cr>
 :nnoremap <leader>eb :e ~/.bashrc<cr>
 :nnoremap <leader>ez :e ~/.zshrc<cr>
+:nnoremap <leader>ek :e ~/.config/kitty/kitty.conf<cr>
 :nnoremap <leader>eB :e ~/dotfiles/Brewfile<cr>
 :nnoremap <leader>eh :e /etc/hosts<cr>
 :nnoremap <leader>et :e ~/.tmux.conf<cr>
