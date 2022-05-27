@@ -2,6 +2,6 @@
 .vim/.netrwhist
 .DS_Store
 .*~
-.vim/bundle
+.vim/plugged
 bin/tor-browser_en-US/*
 Brewfile.lock.json

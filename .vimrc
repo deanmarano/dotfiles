@@ -1,24 +1,18 @@
 set shell=bash                " set default shell
 set nocompatible              " be iMproved, required
-filetype off                  " required
 set clipboard=unnamed " copy to the system clipboard
 
 set autoread
 
 """
-""" Vundle
+""" vim-plug
 """
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 source ~/.vim/Vundlefile.vim
 
-call vundle#end()
-filetype plugin on
+call plug#end()
 
 """
 """ Some defaults (tabs, line endings, etc)
