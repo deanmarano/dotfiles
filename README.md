@@ -11,6 +11,7 @@ This contains config for:
 * tmux (terminal multiplexer)
 * fish (shell)
 * asdf (version manager)
+* kitty (terminal emulator)
 * Homebrew
 
 On a variety of platforms:
@@ -26,3 +27,16 @@ If you're setting up a new computer:
 * `cd; git clone https://github.com/deanmarano/dotfiles.git`
   * Use https until SSH key has been setup.
 * Run `~/dotfiles/setup.sh`
+
+## Installing a new application
+
+When adding an application to the setup:
+
+* Add the app to the install list (usually `Brewfile`)
+* Create the config in the dotfiles repo `touch ~/dotfiles/app.conf`
+  * I like to leave off the leading `.` to make the files visible, and add
+    them back in the link
+* Create symlinks(s) for config to the correct location in `link_dotfiles.sh`
+  * With `app` as an example: `ln -s ~/dotfiles/app.conf ~/.config/app/app.conf`
+  * Reference files directly to dotfiles path, rather than creating more symlinks
+* Use the Solarized Light theme (if applicable)

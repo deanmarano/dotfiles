@@ -40,6 +40,10 @@ ln -s ~/dotfiles/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/fishfile ~/.config/fish/fishfile
 ln -s ~/dotfiles/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
 
+# Kitty
+mkdir -p ~/.config/kitty
+ln -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
+
 ln -s ~/dotfiles/.asdfrc ~/.asdfrc
 ln -s ~/dotfiles/.emacs ~/.emacs
 ln -s ~/dotfiles/.spacemacs ~/.spacemacs
