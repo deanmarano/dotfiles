@@ -67,6 +67,7 @@ abbr mkdir "mkdir -p"
 
 abbr cddm "cd ~/github/deanmarano/"
 abbr cdd "cd ~/dotfiles"
+abbr cdg "cd ~/github"
 abbr -a vi vim
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
