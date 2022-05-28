@@ -3,5 +3,6 @@
 .DS_Store
 .*~
 .vim/plugged
+.vim/autoload/plug.vim
 bin/tor-browser_en-US/*
 Brewfile.lock.json
