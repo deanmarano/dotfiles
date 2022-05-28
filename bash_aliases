@@ -1,5 +1,6 @@
 # cli tools
-alias t="tmux attach -t `hostname` || tmux new -s `hostname`"
+alias t="tmux attach -t `hostname | sed 's/\..*$//'` || tmux new -s `hostname | sed 's/\..*$//'`"
+alias ta="tmux attach"
 alias gprom="git pull --rebase origin master"
 alias gprum="git pull --rebase upstream master"
 alias gprod="git pull --rebase origin dev"
