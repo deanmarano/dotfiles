@@ -72,6 +72,8 @@ abbr -a vi vim
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
 
+# http://transit.iut2.upmf-grenoble.fr/doc/kitty/html/kittens/icat.html
+alias icat="kitty +kitten icat"
 # https://github.com/fish-shell/fish-shell/issues/1363
 function nohist
     set -l prefix $HOME/.config
