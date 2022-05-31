@@ -21,6 +21,7 @@ call plug#end()
 source ~/.vim/janus-settings.vim
 source ~/.vim/carls-git-grep.vim
 source ~/.vim/projectionist.vim
+source ~/.vim/wiki.vim
 
 """
 """ OS Specific settings
@@ -253,17 +254,3 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 :autocmd VimLeave * !tmux setw automatic-rename
 :autocmd FocusLost * !tmux setw automatic-rename
 :autocmd FocusGained * !tmux rename-window " $(basename $(pwd))"
-
-let g:wiki_root = '~/nextcloud/wiki'
-let g:wiki_filetypes = ['md']
-let g:wiki_link_extension = '.md'
-let g:wiki_journal = {
-      \ 'name': 'journal',
-      \ 'frequency': 'daily',
-      \ 'date_format': {
-      \   'daily' : '%Y.%m.%d',
-      \   'weekly' : '%Y_w%V',
-      \   'monthly' : '%Y_m%m',
-      \ },
-      \ 'index_use_journal_scheme': v:true,
-      \}
