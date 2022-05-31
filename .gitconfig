@@ -53,3 +53,5 @@
 
 [interactive]
   diffFilter = delta --color-only --light
+[init]
+	defaultBranch = trunk
