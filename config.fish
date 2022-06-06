@@ -1,5 +1,6 @@
 set fish_greeting ""
 set MC_SKIN $HOME/dotfiles/mc_solarized_light.ini
+set HOMEBREW_NO_ENV_HINTS 1
 
 function free-space
   sudo apt-get autoremove
@@ -65,10 +66,12 @@ end
 abbr -a be bundle exec
 abbr mkdir "mkdir -p"
 
+abbr cdg "cd ~/github/"
 abbr cddm "cd ~/github/deanmarano/"
 abbr cdd "cd ~/dotfiles"
 abbr cdg "cd ~/github"
 abbr -a vi vim
+abbr -a bb "cd ~/dotfiles; and brew bundle; and cd -;"
 
 abbr kaboom "rm -rf node_modules tmp dist; and yarn"
 
@@ -95,6 +98,6 @@ end
 if test asdf
   source ~/.asdf/asdf.fish
 else
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.9.0
   source ~/.asdf/asdf.fish
 end
