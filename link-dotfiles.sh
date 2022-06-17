@@ -7,12 +7,7 @@ mv ~/.gitconfig /tmp/original-dotfiles/.gitconfig 2> /dev/null
 mv ~/.bashrc /tmp/original-dotfiles/.bashrc 2> /dev/null
 mv ~/.gemrc /tmp/original-dotfiles/.gemrc 2> /dev/null
 
-# Git config is slightly different based on OS
-if [ "$(expr $(uname -s))" == "Darwin" ]; then
-  ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  ln -s ~/dotfiles/ubuntu.gitconfig ~/.gitconfig
-fi
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/gitignore_global ~/.gitignore_global
 
 mkdir -p ~/.cache/swap/{backup,undo,swap}
