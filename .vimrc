@@ -60,6 +60,9 @@ else
   let g:ctrlp_match_window = 'max:20'
 endif
 
+:map <leader>ty :set nonumber<cr>:GitGutterBufferDisable<cr>
+:map <leader>uty :set number<cr>:GitGutterBufferEnable<cr>
+
 " expand %% to current directory - from Kevin B., from DAS
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
