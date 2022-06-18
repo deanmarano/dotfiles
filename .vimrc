@@ -71,11 +71,12 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 :nnoremap <leader>eV :e ~/dotfiles/.vim/Vundlefile.vim<cr>
 :nnoremap <leader>eb :e ~/.bashrc<cr>
 :nnoremap <leader>ez :e ~/.zshrc<cr>
+:nnoremap <leader>ef :e ~/dotfiles/config.fish<cr>
 :nnoremap <leader>eB :e ~/dotfiles/Brewfile<cr>
 :nnoremap <leader>eh :e /etc/hosts<cr>
 :nnoremap <leader>et :e ~/.tmux.conf<cr>
-:nnoremap <leader>ef :e ~/dotfiles/config.fish<cr>
 :nnoremap <leader>eg :e ~/dotfiles/.gitconfig<cr>
+:nnoremap <leader>es :e ~/.ssh/config<cr>
 :nnoremap <leader>ek :e ~/dotfiles/kitty.conf<cr>
 
 "reload my vimrc by using \rv (reload vim)
