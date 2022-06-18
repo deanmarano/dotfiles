@@ -11,10 +11,11 @@ let g:wiki_journal = {
       \ 'index_use_journal_scheme': v:true,
       \}
 
-let g:wiki_map_link_create = 'MyFunction'
+let g:wiki_map_link_create = 'UseHyphens'
 let g:wiki_link_target_type = 'md'
 let g:wiki_write_on_nav = 1
+let g:wiki_global_load = 0
 
-function MyFunction(text) abort
+function UseHyphens(text) abort
   return substitute(tolower(a:text), '\s\+', '-', 'g')
 endfunction
