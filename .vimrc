@@ -254,10 +254,14 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
-
 if exists('$TMUX')
   " Set the tmux tab all pretty :)
   :autocmd VimLeave * !tmux setw automatic-rename
   :autocmd FocusLost * !tmux setw automatic-rename
   :autocmd FocusGained * !tmux rename-window " $(basename $(pwd))"
 endif
+
+" vim-visual-multi
+let g:VM_mouse_mappings = 1
+let g:VM_maps["Undo"] = 'u'
+let g:VM_maps["Redo"] = '<C-r>'

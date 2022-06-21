@@ -15,6 +15,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'jwhitley/vim-matchit'
 Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
