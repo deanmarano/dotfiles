@@ -1,18 +1,3 @@
-[color]
-  ui = auto
-[user]
-  email = dean.marano@gmail.com
-  name = Dean Marano
-  useconfigonly = true
-[core]
-  editor = vim
-  autocrlf = input
-  excludesfile = ~/dotfiles/.gitignore_global
-  pager = delta
-[diff]
-  tool = vimdiff
-[difftool]
-  prompt = false
 [alias]
   fpush = push --force-with-lease
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
@@ -31,29 +16,44 @@
   pr = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
 [branch]
   autosetuprebase = always
-[push]
-  default = current
+[color]
+  ui = auto
+[core]
+  editor = vim
+  autocrlf = input
+  excludesfile = ~/dotfiles/.gitignore_global
+  pager = delta
 [credential]
   helper = osxkeychain
-[filter "lfs"]
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-  required = true
-[fetch]
-  prune = true
-[url "ssh://git@github.com/"]
-	insteadOf = https://github.com/
-
 [delta]
   syntax-theme = Solarized (light)
   navigate = true
   line-numbers = true
   side-by-side = true
   light = true
-
+[diff]
+  colorMoved = default
+[difftool]
+  prompt = false
+[fetch]
+  prune = true
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+[init]
+  defaultBranch = trunk
 [interactive]
   diffFilter = delta --color-only --light
-[init]
-	defaultBranch = trunk
+[merge]
+  conflictstyle = diff3
 [pull]
-	rebase = true
+  rebase = true
+[push]
+  default = current
+[rebase]
+  autoStash = true
+[user]
+  email = here@dean.is
+  name = Dean Marano
+  useconfigonly = true
