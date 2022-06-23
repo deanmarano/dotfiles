@@ -36,7 +36,7 @@ When adding an application to the setup:
 * Create the config in the dotfiles repo `touch ~/dotfiles/app.conf`
   * I like to leave off the leading `.` to make the files visible, and add
     them back in the link
-* Create symlinks(s) for config to the correct location in `link_dotfiles.sh`
+* Create symlinks(s) for config to the correct location in `link-dotfiles.sh`
   * With `app` as an example: `ln -s ~/dotfiles/app.conf ~/.config/app/app.conf`
   * Reference files directly to dotfiles path, rather than creating more symlinks
 * Use the Solarized Light theme (if applicable)
