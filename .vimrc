@@ -261,6 +261,10 @@ if exists('$TMUX')
   :autocmd FocusGained * !tmux rename-window " $(basename $(pwd))"
 endif
 
+" https://stackoverflow.com/questions/178257/how-to-avoid-syntax-highlighting-for-large-files-in-vim
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
+let g:LargeFile=10
+
 " vim-visual-multi
 let g:VM_mouse_mappings = 1
 let g:VM_maps["Undo"] = 'u'
