@@ -85,6 +85,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
 
+:nnoremap <C-]> gt<cr>
+:nnoremap <C-[> gT<cr>
+
 source ~/.vim/vimux.vim
 
 "map nerdcommenter to \/
