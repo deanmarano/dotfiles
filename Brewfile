@@ -29,7 +29,7 @@ brew "watchman"
 brew "wget"
 brew "vim"
 brew "youtube-dl"
-brew "vim"
+brew "vipe"
 
 cask "alfred"
 cask "bettertouchtool"
