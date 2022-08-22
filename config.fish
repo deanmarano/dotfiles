@@ -1,6 +1,7 @@
 set fish_greeting ""
 set MC_SKIN $HOME/dotfiles/mc_solarized_light.ini
 set HOMEBREW_NO_ENV_HINTS 1
+set EDITOR (which vim)
 
 function free-space
   sudo apt-get autoremove
