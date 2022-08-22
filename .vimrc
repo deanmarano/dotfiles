@@ -207,9 +207,7 @@ au VimResized * exe "normal! \<c-w>="
 
 set background=light
 
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-colorscheme solarized
+colorscheme flattened_light
 
 " Always show the status line
 set laststatus=2
