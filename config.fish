@@ -63,18 +63,23 @@ function my-ip
   ifconfig | grep "inet " | grep -i mask | grep -v 127.0.0.1 | perl -pe 's/^\s+//' | cut -d ' ' -f2 | sed 's/addr://'
 end
 
+function cannahome
+  pbpaste | gpg --decrypt 2> /dev/null | grep "code is" | sed "s/Your authentication code is: //" | pbcopy
+end
+
 # https://github.com/gsamokovarov/.files/blob/master/.config/fish/aliases.fish
 abbr -a be bundle exec
 abbr mkdir "mkdir -p"
 
-abbr cdg "cd ~/github/"
-abbr cddm "cd ~/github/deanmarano/"
 abbr cdd "cd ~/dotfiles"
 abbr cdg "cd ~/github"
+abbr cddm "cd ~/github/deanmarano/"
+abbr cdr "cd ~/github/deanmarano/recipes"
+
 abbr -a vi vim
 abbr -a bb "cd ~/dotfiles; and brew bundle; and cd -;"
 
-abbr kaboom "rm -rf node_modules tmp dist; and yarn"
+abbr kaboom "rm -rf node_modules tmp dist; and npm install"
 
 # http://transit.iut2.upmf-grenoble.fr/doc/kitty/html/kittens/icat.html
 alias icat="kitty +kitten icat"
