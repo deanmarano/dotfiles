@@ -85,9 +85,6 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
 
-:nnoremap <C-]> gt<cr>
-:nnoremap <C-[> gT<cr>
-
 source ~/.vim/vimux.vim
 
 "map nerdcommenter to \/
@@ -209,9 +206,8 @@ set background=light
 
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
-"let g:solarized_statusline='flat'
-"colorscheme solarized8_flat
-colorscheme fireslime
+let g:solarized_statusline='flat'
+colorscheme solarized8_flat
 
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
