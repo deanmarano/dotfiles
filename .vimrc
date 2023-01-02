@@ -237,6 +237,8 @@ let g:qfenter_exclude_filetypes = ['nerdtree']
 
 let g:markdown_fenced_languages = ['javascript']
 
+nmap <C-W>z <Plug>(zoom-toggle)<C-l>
+
 " Hide tmux when using distraction-free mode
 function! s:goyo_enter()
   set wrap
