@@ -277,3 +277,7 @@ let g:VM_mouse_mappings = 1
 let g:VM_maps = {}
 let g:VM_maps["Undo"] = 'u'
 let g:VM_maps["Redo"] = '<C-r>'
+
+map <leader>X :w<CR>:call SetExecutable()<CR>
+map <leader>mp :ALEFix prettier<cr>
+map <leader>meh :ALEFix eslint<cr>
