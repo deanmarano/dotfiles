@@ -96,7 +96,16 @@ nnoremap <Leader>n :NERDTreeToggle<cr>
 nmap <Leader>f :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 "autoclose NERDTree if it's the last thing left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+function! s:CloseIfOnlyNerdTreeLeft()
+  if exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1 && winnr("$") == 1
+    call timer_start(1, {-> execute('q', 'silent!') }) " close buffer after we exit autocmd
+    call timer_start(100, {-> execute('vertical resize 31', 'silent!') }) " window sizing is goofed up, so fix it
+    call timer_start(250, {-> execute('wincmd w', 'silent!') }) " shift focus from NerdTree window to buffer window
+  endif
+endfunction
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | call s:CloseIfOnlyNerdTreeLeft() | endif
+
 let g:NERDTreeWinSize = 37
 
 " Moving lines and selections with Ctrl-J and K
