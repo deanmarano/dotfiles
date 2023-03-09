@@ -121,7 +121,7 @@ vnoremap <C-k> :m-2<CR>gv=gv
 set mouse=a
 
 " find all rebase/merge conflicts
-nnoremap <Leader>fc :GitGrep '<<<<<<<'<cr>
+nnoremap <Leader>fc :Git difftool<cr>
 
 nnoremap <Leader>gg :GitGrep<Space>
 
