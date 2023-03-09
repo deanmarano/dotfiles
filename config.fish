@@ -26,7 +26,7 @@ function wiki
 end
 
 function links
-  vim ~/Dropbox/Documents/links/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
+  vim ~/Nextcloud/wiki/links/(date +%Y.%m.%d).md -c ':AutoSaveToggle'
 end
 
 function gprom
