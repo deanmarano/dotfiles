@@ -70,7 +70,8 @@ abbr mkdir "mkdir -p"
 abbr cdd "cd ~/dotfiles"
 abbr cdg "cd ~/github"
 abbr cddm "cd ~/github/deanmarano/"
-abbr cdr "cd ~/github/deanmarano/recipes"
+abbr cdra "cd ~/github/deanmarano/recipes-api"
+abbr cdru "cd ~/github/deanmarano/recipes-ui"
 
 abbr -a vi vim
 abbr -a bb "cd ~/dotfiles; and brew bundle; and cd -;"
