@@ -200,6 +200,7 @@ set encoding=utf-8
 " http://stackoverflow.com/questions/5601749/how-to-filter-out-files-by-extension-in-nerdtree
 let NERDTreeIgnore = ['\.pyc$','dist','coverage','\.js.map$']
 autocmd Filetype python setlocal ts=4 sts=4 sw=4
+autocmd Filetype markdown setlocal ts=2 sts=2 sw=2
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 noremap <silent> <C-L> :nohlsearch<CR><C-L>
