@@ -131,6 +131,7 @@ nnoremap <Leader>wt :Goyo<cr>
 " Un-write plain text, these mappings are mostly for brain backwards
 " compatibility
 nnoremap <Leader>uwt :Goyo<cr>
+nnoremap <Leader>ut :Goyo<cr>
 
 " always show tab bar http://vim.1045645.n5.nabble.com/Always-show-tab-bar-in-MacVim-td1215150.html
 :set showtabline=2
