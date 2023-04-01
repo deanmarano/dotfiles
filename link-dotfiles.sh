@@ -37,3 +37,6 @@ mkdir -p ~/.config/kitty
 ln -s ~/dotfiles/kitty.conf ~/.config/kitty/kitty.conf
 
 ln -s ~/dotfiles/.asdfrc ~/.asdfrc
+
+mkdir -p ~/.config/karabiner
+ln -s ~/dotfiles/karabiner.json ~/.config/karabiner/karabiner.json
