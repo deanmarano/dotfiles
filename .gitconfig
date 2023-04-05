@@ -57,3 +57,5 @@
   email = here@dean.is
   name = Dean Marano
   useconfigonly = true
+[mergetool]
+	keepBackup = false
