@@ -27,11 +27,10 @@
   helper = osxkeychain
 [delta]
   syntax-theme = base16
-  ;syntax-theme = Solarized (light)
   navigate = true
   line-numbers = true
   side-by-side = true
-  light = true
+  light = false
 [diff]
   colorMoved = default
 [difftool]
@@ -45,7 +44,7 @@
 [init]
   defaultBranch = trunk
 [interactive]
-  diffFilter = delta --color-only --light
+  diffFilter = delta --color-only
 [merge]
   conflictstyle = diff3
 [pull]
