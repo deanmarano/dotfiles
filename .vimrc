@@ -213,12 +213,15 @@ noremap <silent> <C-L> :nohlsearch<CR><C-L>
 " Resize splits when the window is resized http://vimbits.com/bits/223
 au VimResized * exe "normal! \<c-w>="
 
-set background=light
+"set background=light
 
 let g:solarized_termtrans=1
-let g:solarized_termcolors=256
-let g:solarized_statusline='flat'
-colorscheme solarized8_flat
+"let g:solarized_termcolors=256
+"let g:solarized_statusline='flat'
+"colorscheme solarized8_flat
+"let g:solarized_statusline='high'
+"colorscheme solarized8_high
+colorscheme fireslime
 
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"

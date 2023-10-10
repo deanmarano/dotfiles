@@ -26,7 +26,8 @@
 [credential]
   helper = osxkeychain
 [delta]
-  syntax-theme = Solarized (light)
+  syntax-theme = base16
+  ;syntax-theme = Solarized (light)
   navigate = true
   line-numbers = true
   side-by-side = true
