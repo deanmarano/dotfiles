@@ -82,6 +82,9 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 "reload my vimrc by using \rv (reload vim)
 :nnoremap <leader>rv :source ~/.vimrc<cr>
 
+" close all tabs but current (tab only)
+:nnoremap <leader>to :tabonly<cr>
+
 "open up related spec
 :nnoremap <leader>s :call RelatedSpecVOpen()<cr>
 
