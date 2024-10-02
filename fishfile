@@ -1,6 +1,2 @@
-fisherman/await
-fisherman/get_file_age
-fisherman/last_job_id
-fisherman/menu
-oh-my-fish/plugin-node-binpath
-rcoedo/dir-abbr-fish
+fisher install oh-my-fish/plugin-node-binpath
+fisher install rcoedo/dir-abbr-fish
