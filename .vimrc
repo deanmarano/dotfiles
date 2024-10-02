@@ -104,7 +104,7 @@ function! s:CloseIfOnlyControlWinLeft()
   if winnr("$") != 1
     return
   endif
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1) || &buftype == 'quickfix'
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
     q
   endif
 endfunction
