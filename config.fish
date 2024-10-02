@@ -77,6 +77,7 @@ abbr -a vi vim
 abbr -a bb "cd ~/dotfiles; and brew bundle; and cd -;"
 
 abbr kaboom "rm -rf node_modules tmp dist; and npm install"
+abbr -a gcp "git cherry-pick"
 
 # http://transit.iut2.upmf-grenoble.fr/doc/kitty/html/kittens/icat.html
 alias icat="kitty +kitten icat"
