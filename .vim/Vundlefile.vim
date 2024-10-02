@@ -1,5 +1,5 @@
 Plug 'AndrewRadev/ember_tools.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter', {'branch': 'main'}
 Plug 'ap/vim-css-color'
 Plug 'arthurxavierx/vim-caser'
 Plug 'bfontaine/Brewfile.vim'
@@ -13,7 +13,7 @@ Plug 'dense-analysis/ale'
 Plug 'dhruvasagar/vim-dotoo'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
+Plug 'ervandew/supertab', {'branch': 'main'}
 Plug 'fladson/vim-kitty'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'junegunn/goyo.vim'
