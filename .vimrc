@@ -100,19 +100,8 @@ nmap <Leader>f :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 
 " Close the tab if NERDTree is the only window remaining in it.
-function! s:CloseIfOnlyControlWinLeft()
-  if winnr("$") != 1
-    return
-  endif
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    q
-  endif
-endfunction
-
-augroup CloseIfOnlyControlWinLeft
-  au!
-  au BufEnter * call s:CloseIfOnlyControlWinLeft()
-augroup END
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") 
+      \ && b:NERDTree.isTabTree()) | q | endif
 
 let g:NERDTreeWinSize = 37
 
