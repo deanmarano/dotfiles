@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+exit 0 if `pgrep Spotify` == ''
+result = `spotify status`
+playing, artist, album, track, = result.split(/\n/)
+exit 0 if playing.match(/paused/)
+artist = artist.sub("\e(B\e[mArtist: ", '').strip
+album.sub('Album: ', '').strip
+track = track.sub('Track: ', '').strip
+
+output = "#{artist} - #{track}"
+output = output.slice(0, 40) + '…' if output.length > 40
+
+puts "♫ #{output} ♫"
