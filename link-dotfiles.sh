@@ -25,6 +25,10 @@ ln -s ~/dotfiles/.npmrc ~/.npmrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim ~/.vim
 
+# Neovim
+mkdir -p ~/.config
+ln -s ~/dotfiles/nvim ~/.config/nvim
+
 # Fish
 mkdir -p ~/.config/fish
 mkdir -p ~/.config/fish/functions
