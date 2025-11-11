@@ -37,6 +37,9 @@ opt.hlsearch = true         -- Highlight matches
 opt.ignorecase = true       -- Searches are case insensitive...
 opt.smartcase = true        -- ...unless they contain uppercase
 
+-- Grep format for git grep (without column numbers)
+opt.grepformat = '%f:%l:%m,%f:%l%m,%f  %l%m'
+
 -- Wild menu (completion)
 opt.wildignore = {
   '*.o', '*.out', '*.obj', '.git', '*.rbc', '*.rbo', '*.class', '.svn', '*.gem',
