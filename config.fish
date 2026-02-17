@@ -79,6 +79,27 @@ abbr -a bb "cd ~/dotfiles; and brew bundle; and cd -;"
 abbr kaboom "rm -rf node_modules tmp dist; and npm install"
 abbr -a gcp "git cherry-pick"
 
+function git --wraps git --description "git wrapper with cd subcommand"
+    if test (count $argv) -ge 2 && test "$argv[1]" = "cd"
+        set -l github_user
+        set -l github_repo
+        if string match -q '*/*' $argv[2]
+            set github_user (string split '/' $argv[2])[1]
+            set github_repo (string split '/' $argv[2])[2]
+        else
+            set github_user (command git config github.user)
+            set github_repo $argv[2]
+        end
+        mkdir -p ~/github/$github_user
+        if not test -d ~/github/$github_user/$github_repo
+            command git clone git@github.com:$github_user/$github_repo.git ~/github/$github_user/$github_repo
+        end
+        cd ~/github/$github_user/$github_repo
+    else
+        command git $argv
+    end
+end
+
 # http://transit.iut2.upmf-grenoble.fr/doc/kitty/html/kittens/icat.html
 alias icat="kitty +kitten icat"
 # https://github.com/fish-shell/fish-shell/issues/1363
