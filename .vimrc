@@ -290,4 +290,11 @@ let g:VM_maps["Redo"] = '<C-r>'
 
 map <leader>X :w<CR>:call SetExecutable()<CR>
 map <leader>mp :ALEFix prettier<cr>
-map <leader>meh :ALEFix eslint<cr>
+map <leader>me :ALEFix eslint<cr>
+
+let g:ale_linters_explicit = 1
+let g:ale_linters = {
+\   'javascript': ['eslint', 'tsserver'],
+\   'typescript': ['eslint', 'tsserver'],
+\   'typescriptreact': ['eslint', 'tsserver'],
+\ }
